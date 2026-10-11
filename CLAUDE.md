@@ -15,11 +15,27 @@ All data is synthetic. Never use, ask for, or generate real bank data. The READM
 
 Due: Monday Oct 12, 2026. Solo, 20% of the course grade. Graded on: whether it is a real agent (see the hard requirements below), the repo (README, structure, real commit history, no secrets), a five-minute presentation with a live demo, and whether I can explain every file and how I verified it. No UI is required for this assignment.
 
-Done so far: (nothing yet; update this list as work is completed)
+Done so far:
 
-Not done yet: everything in the build order below.
+- Step 1: plan and file structure agreed (Oct 11, 2026). Decisions recorded below.
 
-Decisions made along the way: (add each design decision and why, for example why the step cap is what it is)
+Not done yet: build steps 2 to 8. Next is step 2, the data generator.
+
+Decisions made along the way:
+
+1. **`sum_amounts` tool added.** The model must never add numbers itself, but it has to compare totals (for example bills + event + goals vs income). This tool only adds, so it has one right answer and stays fact-only.
+2. **Tool arguments are written as JSON**, for example `ACTION: get_transactions({"category": "eating_out", "start_date": "2026-09-01", "end_date": "2026-09-30"})`. Parsed with `json.loads`, never `eval`. Simpler and safer than parsing Python-style arguments.
+3. **One ACTION per reply.** The code uses only the first ACTION line and ignores anything after it, so the model cannot invent a tool result. If this happens in a trace, show it to me.
+4. **Allocation covers the WHOLE month's expected income** (Option A), including fixed bills, subscriptions, goals, events, and an `unassigned` line. The code checks the sum equals expected monthly income within $1 (rounding). Simpler to check, and it catches a forgotten bill.
+5. **429 retry uses the Anthropic SDK's built-in retry** (set to 3 retries, which uses backoff) instead of hand-written retry code. A 401 is caught and gives a clear "bad API key" message.
+6. **Final run logs are committed** in `logs/` as evidence the path varies (synthetic data, no key). Throwaway runs go in `logs/scratch/`, which is gitignored (add this to `.gitignore` when the loop is built).
+7. **System prompt lives in `prompts.py`**, separate from the loop, because it is long text that gets tuned often and this keeps `agent.py` small.
+8. **Runs planned:** the allocation question on all four months, plus a purchase question on the quiet and over-budget months (6 runs). Shows both question types and a short vs long path.
+9. **Model:** cheapest current Haiku-class model. Believed to be `claude-haiku-5-5`, but VERIFY on the Models overview page at docs.claude.com before putting it in `.env`.
+10. **Optional tools skipped** (`get_spending_trend`, `get_past_decisions`) because of the deadline. Drift can be found by comparing `get_category_average` over 3 vs 6 months.
+11. **The scenario folder is bound by the code, never a model argument.** Tools receive the data folder from my code; the model never sees or chooses it.
+12. **Allocation checks live in `checks.py`**, a separate small file, because there are four checks (see "The final answer and the math check").
+13. **Recurring items have a `kind` field: `fixed_bill` or `subscription`.** Only `fixed_bill` items (rent, car payment, insurance) must appear at their full amount. Cancelling a subscription is a legitimate tradeoff, so it is not flagged.
 
 Open questions: (anything I still need to ask my professor)
 
@@ -30,6 +46,10 @@ When I say I am finished for the day, update this file before we stop: move fini
 ### File index
 
 Keep this list current so a fresh session knows what each file is for. (Fill in as files are created.)
+
+- `CLAUDE.md`: project instructions and live status (this file).
+- `.gitignore`: keeps `.env`, `venv/`, `__pycache__/` out of git.
+- `requirements.txt`: Python packages (`anthropic`, `python-dotenv`, and their dependencies). No frameworks.
 
 ## Who I am and how to work with me
 
@@ -58,10 +78,10 @@ This is the course test. Everything below is graded.
 
 The model replies in plain text, and my code reads the first word:
 
-- `ACTION: tool_name(args)` means: run this tool and give me the result.
+- `ACTION: tool_name({"arg": "value"})` means: run this tool and give me the result. Arguments are JSON. One ACTION per reply; anything after the first ACTION line is ignored.
 - `FINAL: answer` means: I am done.
 
-My code does the rest: parse, run the tool, append the result to the conversation, repeat.
+My code does the rest: parse, run the tool, append the result to the conversation, repeat. The scenario data folder is passed to the tools by my code, never by the model.
 
 Settings, defined as named constants at the top of the file:
 
@@ -72,7 +92,7 @@ Settings, defined as named constants at the top of the file:
 Required behaviors:
 
 - Parse tool calls safely. Never use `eval()` or `exec()` on model output.
-- Retry with a short backoff on HTTP 429. Give a clear message on 401 (bad key). Do not crash on one bad call.
+- Retry with a short backoff on HTTP 429 (use the SDK's built-in retry, 3 retries). Give a clear message on 401 (bad key). Do not crash on one bad call.
 - Print each step inside the loop (what the model decided to call, and what came back). These printed steps are my live demo.
 - Log every run to a file: the question, each tool call and result, the final answer, step count, and token usage. I will use these logs to prove the path varies.
 - The loop should `yield` each step (generator style) so a terminal or a web page could display it later. No UI is needed now.
@@ -82,15 +102,16 @@ Required behaviors:
 
 Each tool is a small function that reads the synthetic JSON files and returns small, flat JSON with explicit units and dates in the field names (for example {"category": "eating_out", "month": "2026-09", "total_usd": 412.50}). No deeply nested structures. Each tool's description in the system prompt must say WHEN it is useful, because the model chooses tools from the descriptions.
 
-- `get_balance()`: current balance and income received so far this month.
-- `get_recurring_expenses()`: rent, subscriptions, car payment, car insurance, etc, with due dates.
+- `get_balance()`: current balance, income received so far this month, and expected total income for the month.
+- `get_recurring_expenses()`: rent, subscriptions, car payment, car insurance, etc, with due dates. Each item has `kind`: `fixed_bill` or `subscription`.
 - `get_transactions(category, start_date, end_date)`: what was actually spent, filtered.
 - `get_category_average(category, num_months)`: typical spend in a category over past months.
 - `get_calendar(start_date, end_date)`: upcoming events such as birthdays and trips.
 - `get_goals()`: savings and investing goals, deadlines, and progress.
 - `get_priorities()`: the user's STATED priorities (for example "emergency fund first, social life over investing"). It returns what the user said, not a ranking of what to cut.
+- `sum_amounts(amounts_usd)`: adds a list of numbers (negative numbers subtract) and returns the total. Pure arithmetic, so the model never adds in its head.
 
-Possible later additions, only if there is time: `get_spending_trend(category)`, `get_past_decisions()`.
+Skipped because of the deadline: `get_spending_trend(category)`, `get_past_decisions()`.
 
 ### Tool rules
 
@@ -107,6 +128,15 @@ For allocation questions, the model ends with:
 - a small allocation block as JSON (for example {"eating_out": 250, "groceries": 400}), so my code can parse it and sum it.
 
 My code then sums the allocation and compares it to income. If it does not add up, the code FLAGS the mismatch visibly. The code must never silently fix or rebalance it. The point is to catch an agent that produces a tidy allocation that does not actually work.
+
+The allocation covers the WHOLE month's expected income (from `get_balance()`), not just what is left after bills. Allocation keys for recurring items must use the same names that `get_recurring_expenses()` returns. The checks live in `checks.py`, and each one only FLAGS, never fixes:
+
+1. **Sum check:** the allocation total equals expected monthly income, within $1.
+2. **Fixed bill check:** every `fixed_bill` item appears in the allocation at its real amount. Flag any that are missing or reduced. (`subscription` items are not checked, because cancelling one is a valid tradeoff.)
+3. **Unfunded check:** an `unfunded_usd` line is allowed ONLY if fixed bills alone exceed income. If it appears when fixed bills fit within income, flag it. When it is allowed, the sum check becomes: allocation total minus `unfunded_usd` equals income, within $1.
+4. **Unassigned check:** flag `unassigned` if it is more than 10% of expected monthly income.
+
+For purchase questions, the model ends with a clear verdict (yes, tight, or no), the key numbers it relied on, and the reason. 'Yes' means affordable without cutting or delaying anything. 'Tight' means affordable only by cutting or delaying something, and the answer must name what. 'No' means it is not affordable without cutting essentials (such as groceries) or going against the user's stated priorities, and the answer must say which. "Essentials" means groceries, transport needed for work, and anything labeled `fixed_bill`. Everything else is discretionary. There is no allocation block, so the four checks do not apply.
 
 When the numbers do not work (expenses plus events plus goals exceed income), the correct behavior is for the agent to say plainly what it would cut and what that costs me. A tidy allocation that does not balance is a failure.
 
@@ -139,7 +169,7 @@ Write a plain if-statement version in `baseline.py` (fixed bills first, then a s
 ## Repo and security rules
 
 - `.env` holds `ANTHROPIC_API_KEY` and `MODEL_NAME`. It must be in `.gitignore` BEFORE the first commit.
-- `.gitignore` includes at least: `.env`, `venv/`, `__pycache__/`, and any local log output I do not want public.
+- `.gitignore` includes at least: `.env`, `venv/`, `__pycache__/`, and `logs/scratch/` (throwaway runs). Final run logs in `logs/` ARE committed as evidence.
 - Never print, log, or echo the API key. Never write it in any file that is committed, including this one.
 - Before every push, run `git ls-files` and confirm `.env` is not listed.
 - If a key is ever committed, stop and tell me. Deleting the file does not fix it, because it stays in git history. The key must be rotated.
@@ -147,21 +177,29 @@ Write a plain if-statement version in `baseline.py` (fixed bills first, then a s
 - No real financial data anywhere in the repo.
 - Never read, open, or reference any file outside this project folder. If a task seems to need a file elsewhere, ask me first.
 
-## Suggested structure (confirm in your plan before building)
+## Structure (agreed in step 1)
 
 ```
 budget-agent/
   CLAUDE.md
   README.md
   .gitignore
+  requirements.txt
+  .env.example      (placeholder names only, no real key; committed)
   .env              (never committed)
-  data/             (generated JSON)
-  generate_data.py
-  tools.py
+  generate_data.py  (fixed seed; writes all of data/)
+  data/
+    quiet/          each folder holds: scenario.json (fictional "today"),
+    birthday/         balance.json, recurring.json, transactions.json,
+    over_budget/      calendar.json, goals.json, priorities.json
+    drift/
+  tools.py          (fact-only tools; data folder passed in by code)
+  prompts.py        (system prompt and tool descriptions)
   agent.py          (the loop; this is the main file)
+  checks.py         (the four allocation checks; flag only)
   baseline.py
-  run_tests.py      (runs the four months and saves the logs)
-  logs/
+  run_tests.py      (runs the scenarios and saves the logs)
+  logs/             (final logs committed; logs/scratch/ gitignored)
 ```
 
 ## README (required, graded)
