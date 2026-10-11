@@ -1,0 +1,23 @@
+[
+  {
+    "name": "savings",
+    "target_usd": 20000.0,
+    "saved_so_far_usd": 11669.0,
+    "deadline": "2026-12-31",
+    "planned_monthly_usd": 1667.0
+  },
+  {
+    "name": "roth_ira",
+    "target_usd": 7500.0,
+    "saved_so_far_usd": 4375.0,
+    "deadline": "2026-12-31",
+    "planned_monthly_usd": 625.0
+  },
+  {
+    "name": "brokerage_investing",
+    "target_usd": null,
+    "saved_so_far_usd": 4200.0,
+    "deadline": null,
+    "planned_monthly_usd": null
+  }
+]

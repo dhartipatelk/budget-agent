@@ -1,0 +1,2852 @@
+[
+  {
+    "date": "2025-12-01",
+    "category": "rent",
+    "amount_usd": 2400.0,
+    "description": "Autopay - rent"
+  },
+  {
+    "date": "2025-12-01",
+    "category": "groceries",
+    "amount_usd": 103.29,
+    "description": "Whole Foods"
+  },
+  {
+    "date": "2025-12-02",
+    "category": "eating_out",
+    "amount_usd": 26.21,
+    "description": "Sushi bar"
+  },
+  {
+    "date": "2025-12-02",
+    "category": "transport",
+    "amount_usd": 39.87,
+    "description": "Chevron"
+  },
+  {
+    "date": "2025-12-03",
+    "category": "solidcore",
+    "amount_usd": 258.0,
+    "description": "Autopay - solidcore"
+  },
+  {
+    "date": "2025-12-04",
+    "category": "health",
+    "amount_usd": 44.27,
+    "description": "CVS copay"
+  },
+  {
+    "date": "2025-12-05",
+    "category": "student_loans",
+    "amount_usd": 350.0,
+    "description": "Autopay - student_loans"
+  },
+  {
+    "date": "2025-12-05",
+    "category": "eating_out",
+    "amount_usd": 32.43,
+    "description": "Sushi bar"
+  },
+  {
+    "date": "2025-12-06",
+    "category": "groceries",
+    "amount_usd": 135.02,
+    "description": "Trader Joe's"
+  },
+  {
+    "date": "2025-12-06",
+    "category": "transport",
+    "amount_usd": 33.01,
+    "description": "Shell"
+  },
+  {
+    "date": "2025-12-07",
+    "category": "spotify",
+    "amount_usd": 6.99,
+    "description": "Autopay - spotify"
+  },
+  {
+    "date": "2025-12-07",
+    "category": "eating_out",
+    "amount_usd": 30.62,
+    "description": "Cava"
+  },
+  {
+    "date": "2025-12-08",
+    "category": "internet",
+    "amount_usd": 70.0,
+    "description": "Autopay - internet"
+  },
+  {
+    "date": "2025-12-08",
+    "category": "transport",
+    "amount_usd": 39.91,
+    "description": "Shell"
+  },
+  {
+    "date": "2025-12-08",
+    "category": "gifts",
+    "amount_usd": 120.0,
+    "description": "Holiday gifts - Nordstrom"
+  },
+  {
+    "date": "2025-12-10",
+    "category": "orthodontic_payment",
+    "amount_usd": 169.0,
+    "description": "Autopay - orthodontic_payment"
+  },
+  {
+    "date": "2025-12-10",
+    "category": "entertainment",
+    "amount_usd": 43.34,
+    "description": "Concert tickets"
+  },
+  {
+    "date": "2025-12-12",
+    "category": "phone",
+    "amount_usd": 70.0,
+    "description": "Autopay - phone"
+  },
+  {
+    "date": "2025-12-12",
+    "category": "groceries",
+    "amount_usd": 61.13,
+    "description": "Whole Foods"
+  },
+  {
+    "date": "2025-12-12",
+    "category": "shopping",
+    "amount_usd": 169.74,
+    "description": "Lululemon"
+  },
+  {
+    "date": "2025-12-13",
+    "category": "eating_out",
+    "amount_usd": 40.21,
+    "description": "Sweetgreen"
+  },
+  {
+    "date": "2025-12-14",
+    "category": "applecare",
+    "amount_usd": 20.0,
+    "description": "Autopay - applecare"
+  },
+  {
+    "date": "2025-12-14",
+    "category": "gifts",
+    "amount_usd": 95.0,
+    "description": "Holiday gifts - Etsy"
+  },
+  {
+    "date": "2025-12-16",
+    "category": "savings",
+    "amount_usd": 1667.0,
+    "description": "Transfer - savings"
+  },
+  {
+    "date": "2025-12-16",
+    "category": "roth_ira",
+    "amount_usd": 625.0,
+    "description": "Transfer - roth_ira"
+  },
+  {
+    "date": "2025-12-16",
+    "category": "eating_out",
+    "amount_usd": 43.3,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2025-12-18",
+    "category": "utilities",
+    "amount_usd": 120.0,
+    "description": "Autopay - utilities"
+  },
+  {
+    "date": "2025-12-19",
+    "category": "groceries",
+    "amount_usd": 71.89,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2025-12-19",
+    "category": "shopping",
+    "amount_usd": 140.61,
+    "description": "Ulta"
+  },
+  {
+    "date": "2025-12-19",
+    "category": "entertainment",
+    "amount_usd": 41.46,
+    "description": "AMC"
+  },
+  {
+    "date": "2025-12-20",
+    "category": "car_insurance",
+    "amount_usd": 180.0,
+    "description": "Autopay - car_insurance"
+  },
+  {
+    "date": "2025-12-20",
+    "category": "transport",
+    "amount_usd": 26.25,
+    "description": "Costco gas"
+  },
+  {
+    "date": "2025-12-20",
+    "category": "gifts",
+    "amount_usd": 185.0,
+    "description": "Holiday gifts - Amazon"
+  },
+  {
+    "date": "2025-12-21",
+    "category": "icloud",
+    "amount_usd": 2.99,
+    "description": "Autopay - icloud"
+  },
+  {
+    "date": "2025-12-21",
+    "category": "shopping",
+    "amount_usd": 137.12,
+    "description": "Lululemon"
+  },
+  {
+    "date": "2025-12-23",
+    "category": "groceries",
+    "amount_usd": 67.08,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2025-12-24",
+    "category": "eating_out",
+    "amount_usd": 57.39,
+    "description": "Cava"
+  },
+  {
+    "date": "2025-12-24",
+    "category": "shopping",
+    "amount_usd": 63.16,
+    "description": "Amazon - supplements"
+  },
+  {
+    "date": "2025-12-25",
+    "category": "renters_insurance",
+    "amount_usd": 15.0,
+    "description": "Autopay - renters_insurance"
+  },
+  {
+    "date": "2025-12-25",
+    "category": "groceries",
+    "amount_usd": 52.45,
+    "description": "Trader Joe's"
+  },
+  {
+    "date": "2025-12-27",
+    "category": "streaming",
+    "amount_usd": 15.49,
+    "description": "Autopay - streaming"
+  },
+  {
+    "date": "2025-12-27",
+    "category": "eating_out",
+    "amount_usd": 31.13,
+    "description": "Sushi bar"
+  },
+  {
+    "date": "2026-01-01",
+    "category": "rent",
+    "amount_usd": 2400.0,
+    "description": "Autopay - rent"
+  },
+  {
+    "date": "2026-01-01",
+    "category": "groceries",
+    "amount_usd": 71.19,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-01-02",
+    "category": "transport",
+    "amount_usd": 23.44,
+    "description": "Costco gas"
+  },
+  {
+    "date": "2026-01-03",
+    "category": "solidcore",
+    "amount_usd": 258.0,
+    "description": "Autopay - solidcore"
+  },
+  {
+    "date": "2026-01-03",
+    "category": "eating_out",
+    "amount_usd": 42.12,
+    "description": "Thai kitchen"
+  },
+  {
+    "date": "2026-01-03",
+    "category": "eating_out",
+    "amount_usd": 29.14,
+    "description": "Sushi bar"
+  },
+  {
+    "date": "2026-01-03",
+    "category": "shopping",
+    "amount_usd": 80.59,
+    "description": "Lululemon"
+  },
+  {
+    "date": "2026-01-04",
+    "category": "health",
+    "amount_usd": 75.53,
+    "description": "Walgreens"
+  },
+  {
+    "date": "2026-01-05",
+    "category": "student_loans",
+    "amount_usd": 350.0,
+    "description": "Autopay - student_loans"
+  },
+  {
+    "date": "2026-01-05",
+    "category": "shopping",
+    "amount_usd": 117.32,
+    "description": "Target"
+  },
+  {
+    "date": "2026-01-05",
+    "category": "entertainment",
+    "amount_usd": 37.43,
+    "description": "AMC"
+  },
+  {
+    "date": "2026-01-07",
+    "category": "spotify",
+    "amount_usd": 6.99,
+    "description": "Autopay - spotify"
+  },
+  {
+    "date": "2026-01-08",
+    "category": "internet",
+    "amount_usd": 70.0,
+    "description": "Autopay - internet"
+  },
+  {
+    "date": "2026-01-08",
+    "category": "transport",
+    "amount_usd": 46.08,
+    "description": "Costco gas"
+  },
+  {
+    "date": "2026-01-09",
+    "category": "groceries",
+    "amount_usd": 128.44,
+    "description": "Whole Foods"
+  },
+  {
+    "date": "2026-01-09",
+    "category": "groceries",
+    "amount_usd": 77.7,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-01-10",
+    "category": "orthodontic_payment",
+    "amount_usd": 169.0,
+    "description": "Autopay - orthodontic_payment"
+  },
+  {
+    "date": "2026-01-11",
+    "category": "eating_out",
+    "amount_usd": 50.12,
+    "description": "Thai kitchen"
+  },
+  {
+    "date": "2026-01-12",
+    "category": "phone",
+    "amount_usd": 70.0,
+    "description": "Autopay - phone"
+  },
+  {
+    "date": "2026-01-12",
+    "category": "transport",
+    "amount_usd": 39.81,
+    "description": "Shell"
+  },
+  {
+    "date": "2026-01-13",
+    "category": "eating_out",
+    "amount_usd": 28.51,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-01-13",
+    "category": "shopping",
+    "amount_usd": 69.36,
+    "description": "Amazon - supplements"
+  },
+  {
+    "date": "2026-01-14",
+    "category": "applecare",
+    "amount_usd": 20.0,
+    "description": "Autopay - applecare"
+  },
+  {
+    "date": "2026-01-15",
+    "category": "shopping",
+    "amount_usd": 53.6,
+    "description": "Sephora"
+  },
+  {
+    "date": "2026-01-15",
+    "category": "entertainment",
+    "amount_usd": 42.84,
+    "description": "Concert tickets"
+  },
+  {
+    "date": "2026-01-16",
+    "category": "savings",
+    "amount_usd": 1667.0,
+    "description": "Transfer - savings"
+  },
+  {
+    "date": "2026-01-16",
+    "category": "roth_ira",
+    "amount_usd": 625.0,
+    "description": "Transfer - roth_ira"
+  },
+  {
+    "date": "2026-01-16",
+    "category": "eating_out",
+    "amount_usd": 54.62,
+    "description": "Sushi bar"
+  },
+  {
+    "date": "2026-01-16",
+    "category": "transport",
+    "amount_usd": 37.11,
+    "description": "Shell"
+  },
+  {
+    "date": "2026-01-18",
+    "category": "utilities",
+    "amount_usd": 120.0,
+    "description": "Autopay - utilities"
+  },
+  {
+    "date": "2026-01-20",
+    "category": "car_insurance",
+    "amount_usd": 180.0,
+    "description": "Autopay - car_insurance"
+  },
+  {
+    "date": "2026-01-20",
+    "category": "groceries",
+    "amount_usd": 106.72,
+    "description": "Trader Joe's"
+  },
+  {
+    "date": "2026-01-21",
+    "category": "icloud",
+    "amount_usd": 2.99,
+    "description": "Autopay - icloud"
+  },
+  {
+    "date": "2026-01-21",
+    "category": "groceries",
+    "amount_usd": 63.96,
+    "description": "Whole Foods"
+  },
+  {
+    "date": "2026-01-21",
+    "category": "groceries",
+    "amount_usd": 62.67,
+    "description": "Whole Foods"
+  },
+  {
+    "date": "2026-01-25",
+    "category": "renters_insurance",
+    "amount_usd": 15.0,
+    "description": "Autopay - renters_insurance"
+  },
+  {
+    "date": "2026-01-25",
+    "category": "eating_out",
+    "amount_usd": 25.9,
+    "description": "Thai kitchen"
+  },
+  {
+    "date": "2026-01-26",
+    "category": "eating_out",
+    "amount_usd": 49.75,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-01-27",
+    "category": "streaming",
+    "amount_usd": 15.49,
+    "description": "Autopay - streaming"
+  },
+  {
+    "date": "2026-02-01",
+    "category": "rent",
+    "amount_usd": 2400.0,
+    "description": "Autopay - rent"
+  },
+  {
+    "date": "2026-02-02",
+    "category": "eating_out",
+    "amount_usd": 46.91,
+    "description": "Sushi bar"
+  },
+  {
+    "date": "2026-02-03",
+    "category": "solidcore",
+    "amount_usd": 258.0,
+    "description": "Autopay - solidcore"
+  },
+  {
+    "date": "2026-02-04",
+    "category": "shopping",
+    "amount_usd": 132.42,
+    "description": "Target"
+  },
+  {
+    "date": "2026-02-05",
+    "category": "student_loans",
+    "amount_usd": 350.0,
+    "description": "Autopay - student_loans"
+  },
+  {
+    "date": "2026-02-05",
+    "category": "transport",
+    "amount_usd": 38.15,
+    "description": "Chevron"
+  },
+  {
+    "date": "2026-02-06",
+    "category": "groceries",
+    "amount_usd": 128.51,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-02-06",
+    "category": "shopping",
+    "amount_usd": 148.02,
+    "description": "Sephora"
+  },
+  {
+    "date": "2026-02-06",
+    "category": "shopping",
+    "amount_usd": 100.25,
+    "description": "Ulta"
+  },
+  {
+    "date": "2026-02-07",
+    "category": "spotify",
+    "amount_usd": 6.99,
+    "description": "Autopay - spotify"
+  },
+  {
+    "date": "2026-02-07",
+    "category": "shopping",
+    "amount_usd": 210.45,
+    "description": "Sephora"
+  },
+  {
+    "date": "2026-02-08",
+    "category": "internet",
+    "amount_usd": 70.0,
+    "description": "Autopay - internet"
+  },
+  {
+    "date": "2026-02-08",
+    "category": "groceries",
+    "amount_usd": 45.85,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-02-09",
+    "category": "eating_out",
+    "amount_usd": 26.12,
+    "description": "Cava"
+  },
+  {
+    "date": "2026-02-09",
+    "category": "transport",
+    "amount_usd": 43.33,
+    "description": "Chevron"
+  },
+  {
+    "date": "2026-02-10",
+    "category": "orthodontic_payment",
+    "amount_usd": 169.0,
+    "description": "Autopay - orthodontic_payment"
+  },
+  {
+    "date": "2026-02-11",
+    "category": "groceries",
+    "amount_usd": 103.09,
+    "description": "Trader Joe's"
+  },
+  {
+    "date": "2026-02-11",
+    "category": "eating_out",
+    "amount_usd": 23.31,
+    "description": "Thai kitchen"
+  },
+  {
+    "date": "2026-02-12",
+    "category": "phone",
+    "amount_usd": 70.0,
+    "description": "Autopay - phone"
+  },
+  {
+    "date": "2026-02-13",
+    "category": "groceries",
+    "amount_usd": 58.63,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-02-13",
+    "category": "eating_out",
+    "amount_usd": 43.41,
+    "description": "Cava"
+  },
+  {
+    "date": "2026-02-14",
+    "category": "applecare",
+    "amount_usd": 20.0,
+    "description": "Autopay - applecare"
+  },
+  {
+    "date": "2026-02-15",
+    "category": "entertainment",
+    "amount_usd": 44.58,
+    "description": "Concert tickets"
+  },
+  {
+    "date": "2026-02-15",
+    "category": "health",
+    "amount_usd": 67.34,
+    "description": "Walgreens"
+  },
+  {
+    "date": "2026-02-16",
+    "category": "savings",
+    "amount_usd": 1667.0,
+    "description": "Transfer - savings"
+  },
+  {
+    "date": "2026-02-16",
+    "category": "roth_ira",
+    "amount_usd": 625.0,
+    "description": "Transfer - roth_ira"
+  },
+  {
+    "date": "2026-02-16",
+    "category": "entertainment",
+    "amount_usd": 45.02,
+    "description": "Concert tickets"
+  },
+  {
+    "date": "2026-02-18",
+    "category": "utilities",
+    "amount_usd": 120.0,
+    "description": "Autopay - utilities"
+  },
+  {
+    "date": "2026-02-19",
+    "category": "eating_out",
+    "amount_usd": 40.5,
+    "description": "Sushi bar"
+  },
+  {
+    "date": "2026-02-19",
+    "category": "transport",
+    "amount_usd": 59.13,
+    "description": "Chevron"
+  },
+  {
+    "date": "2026-02-20",
+    "category": "car_insurance",
+    "amount_usd": 180.0,
+    "description": "Autopay - car_insurance"
+  },
+  {
+    "date": "2026-02-21",
+    "category": "icloud",
+    "amount_usd": 2.99,
+    "description": "Autopay - icloud"
+  },
+  {
+    "date": "2026-02-22",
+    "category": "eating_out",
+    "amount_usd": 40.89,
+    "description": "Thai kitchen"
+  },
+  {
+    "date": "2026-02-23",
+    "category": "groceries",
+    "amount_usd": 128.38,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-02-23",
+    "category": "eating_out",
+    "amount_usd": 22.62,
+    "description": "Sweetgreen"
+  },
+  {
+    "date": "2026-02-24",
+    "category": "groceries",
+    "amount_usd": 82.27,
+    "description": "Whole Foods"
+  },
+  {
+    "date": "2026-02-25",
+    "category": "renters_insurance",
+    "amount_usd": 15.0,
+    "description": "Autopay - renters_insurance"
+  },
+  {
+    "date": "2026-02-25",
+    "category": "transport",
+    "amount_usd": 43.17,
+    "description": "Shell"
+  },
+  {
+    "date": "2026-02-27",
+    "category": "streaming",
+    "amount_usd": 15.49,
+    "description": "Autopay - streaming"
+  },
+  {
+    "date": "2026-03-01",
+    "category": "rent",
+    "amount_usd": 2400.0,
+    "description": "Autopay - rent"
+  },
+  {
+    "date": "2026-03-01",
+    "category": "eating_out",
+    "amount_usd": 19.52,
+    "description": "Thai kitchen"
+  },
+  {
+    "date": "2026-03-01",
+    "category": "health",
+    "amount_usd": 52.0,
+    "description": "Walgreens"
+  },
+  {
+    "date": "2026-03-02",
+    "category": "transport",
+    "amount_usd": 47.7,
+    "description": "Shell"
+  },
+  {
+    "date": "2026-03-03",
+    "category": "solidcore",
+    "amount_usd": 258.0,
+    "description": "Autopay - solidcore"
+  },
+  {
+    "date": "2026-03-04",
+    "category": "shopping",
+    "amount_usd": 95.32,
+    "description": "Target"
+  },
+  {
+    "date": "2026-03-05",
+    "category": "student_loans",
+    "amount_usd": 350.0,
+    "description": "Autopay - student_loans"
+  },
+  {
+    "date": "2026-03-07",
+    "category": "spotify",
+    "amount_usd": 6.99,
+    "description": "Autopay - spotify"
+  },
+  {
+    "date": "2026-03-08",
+    "category": "internet",
+    "amount_usd": 70.0,
+    "description": "Autopay - internet"
+  },
+  {
+    "date": "2026-03-08",
+    "category": "entertainment",
+    "amount_usd": 59.15,
+    "description": "Bowling"
+  },
+  {
+    "date": "2026-03-09",
+    "category": "groceries",
+    "amount_usd": 74.55,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-03-10",
+    "category": "orthodontic_payment",
+    "amount_usd": 169.0,
+    "description": "Autopay - orthodontic_payment"
+  },
+  {
+    "date": "2026-03-10",
+    "category": "groceries",
+    "amount_usd": 77.3,
+    "description": "Whole Foods"
+  },
+  {
+    "date": "2026-03-10",
+    "category": "eating_out",
+    "amount_usd": 26.72,
+    "description": "Cava"
+  },
+  {
+    "date": "2026-03-10",
+    "category": "shopping",
+    "amount_usd": 49.15,
+    "description": "Lululemon"
+  },
+  {
+    "date": "2026-03-11",
+    "category": "entertainment",
+    "amount_usd": 40.81,
+    "description": "Concert tickets"
+  },
+  {
+    "date": "2026-03-12",
+    "category": "phone",
+    "amount_usd": 70.0,
+    "description": "Autopay - phone"
+  },
+  {
+    "date": "2026-03-12",
+    "category": "groceries",
+    "amount_usd": 62.95,
+    "description": "Whole Foods"
+  },
+  {
+    "date": "2026-03-12",
+    "category": "groceries",
+    "amount_usd": 122.38,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-03-14",
+    "category": "applecare",
+    "amount_usd": 20.0,
+    "description": "Autopay - applecare"
+  },
+  {
+    "date": "2026-03-14",
+    "category": "groceries",
+    "amount_usd": 111.44,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-03-15",
+    "category": "eating_out",
+    "amount_usd": 38.98,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-03-16",
+    "category": "savings",
+    "amount_usd": 1667.0,
+    "description": "Transfer - savings"
+  },
+  {
+    "date": "2026-03-16",
+    "category": "roth_ira",
+    "amount_usd": 625.0,
+    "description": "Transfer - roth_ira"
+  },
+  {
+    "date": "2026-03-16",
+    "category": "shopping",
+    "amount_usd": 85.75,
+    "description": "Sephora"
+  },
+  {
+    "date": "2026-03-18",
+    "category": "utilities",
+    "amount_usd": 120.0,
+    "description": "Autopay - utilities"
+  },
+  {
+    "date": "2026-03-18",
+    "category": "transport",
+    "amount_usd": 34.38,
+    "description": "Costco gas"
+  },
+  {
+    "date": "2026-03-18",
+    "category": "transport",
+    "amount_usd": 37.67,
+    "description": "Chevron"
+  },
+  {
+    "date": "2026-03-19",
+    "category": "eating_out",
+    "amount_usd": 47.86,
+    "description": "Sweetgreen"
+  },
+  {
+    "date": "2026-03-20",
+    "category": "car_insurance",
+    "amount_usd": 180.0,
+    "description": "Autopay - car_insurance"
+  },
+  {
+    "date": "2026-03-21",
+    "category": "icloud",
+    "amount_usd": 2.99,
+    "description": "Autopay - icloud"
+  },
+  {
+    "date": "2026-03-21",
+    "category": "groceries",
+    "amount_usd": 100.82,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-03-21",
+    "category": "eating_out",
+    "amount_usd": 27.45,
+    "description": "Sushi bar"
+  },
+  {
+    "date": "2026-03-21",
+    "category": "eating_out",
+    "amount_usd": 44.19,
+    "description": "Cava"
+  },
+  {
+    "date": "2026-03-23",
+    "category": "shopping",
+    "amount_usd": 105.99,
+    "description": "Sephora"
+  },
+  {
+    "date": "2026-03-25",
+    "category": "renters_insurance",
+    "amount_usd": 15.0,
+    "description": "Autopay - renters_insurance"
+  },
+  {
+    "date": "2026-03-25",
+    "category": "eating_out",
+    "amount_usd": 43.54,
+    "description": "Thai kitchen"
+  },
+  {
+    "date": "2026-03-26",
+    "category": "transport",
+    "amount_usd": 36.68,
+    "description": "Shell"
+  },
+  {
+    "date": "2026-03-27",
+    "category": "streaming",
+    "amount_usd": 15.49,
+    "description": "Autopay - streaming"
+  },
+  {
+    "date": "2026-04-01",
+    "category": "rent",
+    "amount_usd": 2400.0,
+    "description": "Autopay - rent"
+  },
+  {
+    "date": "2026-04-01",
+    "category": "eating_out",
+    "amount_usd": 31.74,
+    "description": "Sushi bar"
+  },
+  {
+    "date": "2026-04-01",
+    "category": "eating_out",
+    "amount_usd": 53.74,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-04-01",
+    "category": "eating_out",
+    "amount_usd": 23.98,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-04-01",
+    "category": "entertainment",
+    "amount_usd": 49.7,
+    "description": "Bowling"
+  },
+  {
+    "date": "2026-04-02",
+    "category": "shopping",
+    "amount_usd": 79.03,
+    "description": "Lululemon"
+  },
+  {
+    "date": "2026-04-03",
+    "category": "solidcore",
+    "amount_usd": 258.0,
+    "description": "Autopay - solidcore"
+  },
+  {
+    "date": "2026-04-03",
+    "category": "groceries",
+    "amount_usd": 86.2,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-04-03",
+    "category": "entertainment",
+    "amount_usd": 34.35,
+    "description": "AMC"
+  },
+  {
+    "date": "2026-04-04",
+    "category": "groceries",
+    "amount_usd": 76.4,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-04-05",
+    "category": "student_loans",
+    "amount_usd": 350.0,
+    "description": "Autopay - student_loans"
+  },
+  {
+    "date": "2026-04-07",
+    "category": "spotify",
+    "amount_usd": 6.99,
+    "description": "Autopay - spotify"
+  },
+  {
+    "date": "2026-04-07",
+    "category": "eating_out",
+    "amount_usd": 29.99,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-04-08",
+    "category": "internet",
+    "amount_usd": 70.0,
+    "description": "Autopay - internet"
+  },
+  {
+    "date": "2026-04-08",
+    "category": "eating_out",
+    "amount_usd": 41.41,
+    "description": "Cava"
+  },
+  {
+    "date": "2026-04-08",
+    "category": "transport",
+    "amount_usd": 56.75,
+    "description": "Costco gas"
+  },
+  {
+    "date": "2026-04-09",
+    "category": "transport",
+    "amount_usd": 24.36,
+    "description": "Chevron"
+  },
+  {
+    "date": "2026-04-10",
+    "category": "orthodontic_payment",
+    "amount_usd": 169.0,
+    "description": "Autopay - orthodontic_payment"
+  },
+  {
+    "date": "2026-04-11",
+    "category": "shopping",
+    "amount_usd": 68.53,
+    "description": "Lululemon"
+  },
+  {
+    "date": "2026-04-12",
+    "category": "phone",
+    "amount_usd": 70.0,
+    "description": "Autopay - phone"
+  },
+  {
+    "date": "2026-04-13",
+    "category": "groceries",
+    "amount_usd": 41.41,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-04-13",
+    "category": "eating_out",
+    "amount_usd": 42.42,
+    "description": "Cava"
+  },
+  {
+    "date": "2026-04-14",
+    "category": "applecare",
+    "amount_usd": 20.0,
+    "description": "Autopay - applecare"
+  },
+  {
+    "date": "2026-04-16",
+    "category": "savings",
+    "amount_usd": 1667.0,
+    "description": "Transfer - savings"
+  },
+  {
+    "date": "2026-04-16",
+    "category": "roth_ira",
+    "amount_usd": 625.0,
+    "description": "Transfer - roth_ira"
+  },
+  {
+    "date": "2026-04-18",
+    "category": "utilities",
+    "amount_usd": 120.0,
+    "description": "Autopay - utilities"
+  },
+  {
+    "date": "2026-04-18",
+    "category": "groceries",
+    "amount_usd": 76.92,
+    "description": "Whole Foods"
+  },
+  {
+    "date": "2026-04-18",
+    "category": "shopping",
+    "amount_usd": 61.34,
+    "description": "Amazon - supplements"
+  },
+  {
+    "date": "2026-04-19",
+    "category": "groceries",
+    "amount_usd": 83.06,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-04-20",
+    "category": "car_insurance",
+    "amount_usd": 180.0,
+    "description": "Autopay - car_insurance"
+  },
+  {
+    "date": "2026-04-21",
+    "category": "icloud",
+    "amount_usd": 2.99,
+    "description": "Autopay - icloud"
+  },
+  {
+    "date": "2026-04-21",
+    "category": "shopping",
+    "amount_usd": 68.1,
+    "description": "Ulta"
+  },
+  {
+    "date": "2026-04-22",
+    "category": "transport",
+    "amount_usd": 29.63,
+    "description": "Shell"
+  },
+  {
+    "date": "2026-04-22",
+    "category": "health",
+    "amount_usd": 49.4,
+    "description": "CVS copay"
+  },
+  {
+    "date": "2026-04-23",
+    "category": "eating_out",
+    "amount_usd": 30.94,
+    "description": "Thai kitchen"
+  },
+  {
+    "date": "2026-04-25",
+    "category": "renters_insurance",
+    "amount_usd": 15.0,
+    "description": "Autopay - renters_insurance"
+  },
+  {
+    "date": "2026-04-25",
+    "category": "transport",
+    "amount_usd": 54.54,
+    "description": "Chevron"
+  },
+  {
+    "date": "2026-04-27",
+    "category": "streaming",
+    "amount_usd": 15.49,
+    "description": "Autopay - streaming"
+  },
+  {
+    "date": "2026-04-27",
+    "category": "groceries",
+    "amount_usd": 87.59,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-05-01",
+    "category": "rent",
+    "amount_usd": 2400.0,
+    "description": "Autopay - rent"
+  },
+  {
+    "date": "2026-05-01",
+    "category": "eating_out",
+    "amount_usd": 44.04,
+    "description": "Cava"
+  },
+  {
+    "date": "2026-05-01",
+    "category": "transport",
+    "amount_usd": 41.54,
+    "description": "Chevron"
+  },
+  {
+    "date": "2026-05-02",
+    "category": "eating_out",
+    "amount_usd": 35.2,
+    "description": "Sushi bar"
+  },
+  {
+    "date": "2026-05-03",
+    "category": "solidcore",
+    "amount_usd": 258.0,
+    "description": "Autopay - solidcore"
+  },
+  {
+    "date": "2026-05-05",
+    "category": "student_loans",
+    "amount_usd": 350.0,
+    "description": "Autopay - student_loans"
+  },
+  {
+    "date": "2026-05-05",
+    "category": "groceries",
+    "amount_usd": 89.65,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-05-06",
+    "category": "shopping",
+    "amount_usd": 63.61,
+    "description": "Sephora"
+  },
+  {
+    "date": "2026-05-07",
+    "category": "spotify",
+    "amount_usd": 6.99,
+    "description": "Autopay - spotify"
+  },
+  {
+    "date": "2026-05-07",
+    "category": "shopping",
+    "amount_usd": 96.42,
+    "description": "Amazon - supplements"
+  },
+  {
+    "date": "2026-05-08",
+    "category": "internet",
+    "amount_usd": 70.0,
+    "description": "Autopay - internet"
+  },
+  {
+    "date": "2026-05-08",
+    "category": "groceries",
+    "amount_usd": 65.6,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-05-09",
+    "category": "eating_out",
+    "amount_usd": 51.25,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-05-10",
+    "category": "orthodontic_payment",
+    "amount_usd": 169.0,
+    "description": "Autopay - orthodontic_payment"
+  },
+  {
+    "date": "2026-05-10",
+    "category": "groceries",
+    "amount_usd": 108.23,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-05-12",
+    "category": "phone",
+    "amount_usd": 70.0,
+    "description": "Autopay - phone"
+  },
+  {
+    "date": "2026-05-12",
+    "category": "eating_out",
+    "amount_usd": 51.06,
+    "description": "Cava"
+  },
+  {
+    "date": "2026-05-12",
+    "category": "health",
+    "amount_usd": 31.49,
+    "description": "Walgreens"
+  },
+  {
+    "date": "2026-05-14",
+    "category": "applecare",
+    "amount_usd": 20.0,
+    "description": "Autopay - applecare"
+  },
+  {
+    "date": "2026-05-16",
+    "category": "savings",
+    "amount_usd": 1667.0,
+    "description": "Transfer - savings"
+  },
+  {
+    "date": "2026-05-16",
+    "category": "roth_ira",
+    "amount_usd": 625.0,
+    "description": "Transfer - roth_ira"
+  },
+  {
+    "date": "2026-05-16",
+    "category": "groceries",
+    "amount_usd": 49.64,
+    "description": "Trader Joe's"
+  },
+  {
+    "date": "2026-05-17",
+    "category": "transport",
+    "amount_usd": 40.25,
+    "description": "Shell"
+  },
+  {
+    "date": "2026-05-18",
+    "category": "utilities",
+    "amount_usd": 120.0,
+    "description": "Autopay - utilities"
+  },
+  {
+    "date": "2026-05-18",
+    "category": "eating_out",
+    "amount_usd": 26.65,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-05-19",
+    "category": "groceries",
+    "amount_usd": 125.24,
+    "description": "Trader Joe's"
+  },
+  {
+    "date": "2026-05-20",
+    "category": "car_insurance",
+    "amount_usd": 180.0,
+    "description": "Autopay - car_insurance"
+  },
+  {
+    "date": "2026-05-21",
+    "category": "icloud",
+    "amount_usd": 2.99,
+    "description": "Autopay - icloud"
+  },
+  {
+    "date": "2026-05-21",
+    "category": "shopping",
+    "amount_usd": 113.24,
+    "description": "Lululemon"
+  },
+  {
+    "date": "2026-05-21",
+    "category": "shopping",
+    "amount_usd": 145.18,
+    "description": "Amazon - supplements"
+  },
+  {
+    "date": "2026-05-22",
+    "category": "entertainment",
+    "amount_usd": 24.87,
+    "description": "AMC"
+  },
+  {
+    "date": "2026-05-23",
+    "category": "groceries",
+    "amount_usd": 44.21,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-05-23",
+    "category": "gifts",
+    "amount_usd": 200.0,
+    "description": "Wedding gift - Zola registry"
+  },
+  {
+    "date": "2026-05-24",
+    "category": "eating_out",
+    "amount_usd": 36.15,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-05-25",
+    "category": "renters_insurance",
+    "amount_usd": 15.0,
+    "description": "Autopay - renters_insurance"
+  },
+  {
+    "date": "2026-05-25",
+    "category": "eating_out",
+    "amount_usd": 18.65,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-05-25",
+    "category": "transport",
+    "amount_usd": 24.0,
+    "description": "Shell"
+  },
+  {
+    "date": "2026-05-25",
+    "category": "entertainment",
+    "amount_usd": 32.07,
+    "description": "Bowling"
+  },
+  {
+    "date": "2026-05-27",
+    "category": "streaming",
+    "amount_usd": 15.49,
+    "description": "Autopay - streaming"
+  },
+  {
+    "date": "2026-05-27",
+    "category": "transport",
+    "amount_usd": 26.02,
+    "description": "Chevron"
+  },
+  {
+    "date": "2026-06-01",
+    "category": "rent",
+    "amount_usd": 2400.0,
+    "description": "Autopay - rent"
+  },
+  {
+    "date": "2026-06-02",
+    "category": "eating_out",
+    "amount_usd": 45.2,
+    "description": "Cava"
+  },
+  {
+    "date": "2026-06-02",
+    "category": "transport",
+    "amount_usd": 41.7,
+    "description": "Chevron"
+  },
+  {
+    "date": "2026-06-03",
+    "category": "solidcore",
+    "amount_usd": 258.0,
+    "description": "Autopay - solidcore"
+  },
+  {
+    "date": "2026-06-03",
+    "category": "eating_out",
+    "amount_usd": 47.73,
+    "description": "Sweetgreen"
+  },
+  {
+    "date": "2026-06-04",
+    "category": "groceries",
+    "amount_usd": 82.82,
+    "description": "Trader Joe's"
+  },
+  {
+    "date": "2026-06-04",
+    "category": "shopping",
+    "amount_usd": 67.96,
+    "description": "Lululemon"
+  },
+  {
+    "date": "2026-06-05",
+    "category": "student_loans",
+    "amount_usd": 350.0,
+    "description": "Autopay - student_loans"
+  },
+  {
+    "date": "2026-06-05",
+    "category": "eating_out",
+    "amount_usd": 25.27,
+    "description": "Sushi bar"
+  },
+  {
+    "date": "2026-06-06",
+    "category": "eating_out",
+    "amount_usd": 58.21,
+    "description": "Cava"
+  },
+  {
+    "date": "2026-06-07",
+    "category": "spotify",
+    "amount_usd": 6.99,
+    "description": "Autopay - spotify"
+  },
+  {
+    "date": "2026-06-08",
+    "category": "internet",
+    "amount_usd": 70.0,
+    "description": "Autopay - internet"
+  },
+  {
+    "date": "2026-06-08",
+    "category": "groceries",
+    "amount_usd": 54.32,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-06-08",
+    "category": "transport",
+    "amount_usd": 48.48,
+    "description": "Chevron"
+  },
+  {
+    "date": "2026-06-10",
+    "category": "orthodontic_payment",
+    "amount_usd": 169.0,
+    "description": "Autopay - orthodontic_payment"
+  },
+  {
+    "date": "2026-06-10",
+    "category": "groceries",
+    "amount_usd": 84.84,
+    "description": "Whole Foods"
+  },
+  {
+    "date": "2026-06-10",
+    "category": "entertainment",
+    "amount_usd": 33.26,
+    "description": "AMC"
+  },
+  {
+    "date": "2026-06-12",
+    "category": "phone",
+    "amount_usd": 70.0,
+    "description": "Autopay - phone"
+  },
+  {
+    "date": "2026-06-12",
+    "category": "shopping",
+    "amount_usd": 40.17,
+    "description": "Lululemon"
+  },
+  {
+    "date": "2026-06-13",
+    "category": "eating_out",
+    "amount_usd": 22.43,
+    "description": "Sushi bar"
+  },
+  {
+    "date": "2026-06-14",
+    "category": "applecare",
+    "amount_usd": 20.0,
+    "description": "Autopay - applecare"
+  },
+  {
+    "date": "2026-06-16",
+    "category": "savings",
+    "amount_usd": 1667.0,
+    "description": "Transfer - savings"
+  },
+  {
+    "date": "2026-06-16",
+    "category": "roth_ira",
+    "amount_usd": 625.0,
+    "description": "Transfer - roth_ira"
+  },
+  {
+    "date": "2026-06-16",
+    "category": "transport",
+    "amount_usd": 21.82,
+    "description": "Shell"
+  },
+  {
+    "date": "2026-06-17",
+    "category": "eating_out",
+    "amount_usd": 22.3,
+    "description": "Thai kitchen"
+  },
+  {
+    "date": "2026-06-18",
+    "category": "utilities",
+    "amount_usd": 120.0,
+    "description": "Autopay - utilities"
+  },
+  {
+    "date": "2026-06-19",
+    "category": "health",
+    "amount_usd": 65.12,
+    "description": "CVS copay"
+  },
+  {
+    "date": "2026-06-20",
+    "category": "car_insurance",
+    "amount_usd": 180.0,
+    "description": "Autopay - car_insurance"
+  },
+  {
+    "date": "2026-06-20",
+    "category": "groceries",
+    "amount_usd": 112.35,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-06-21",
+    "category": "icloud",
+    "amount_usd": 2.99,
+    "description": "Autopay - icloud"
+  },
+  {
+    "date": "2026-06-21",
+    "category": "eating_out",
+    "amount_usd": 57.73,
+    "description": "Sweetgreen"
+  },
+  {
+    "date": "2026-06-23",
+    "category": "groceries",
+    "amount_usd": 106.16,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-06-23",
+    "category": "transport",
+    "amount_usd": 39.69,
+    "description": "Chevron"
+  },
+  {
+    "date": "2026-06-24",
+    "category": "shopping",
+    "amount_usd": 29.15,
+    "description": "Target"
+  },
+  {
+    "date": "2026-06-25",
+    "category": "renters_insurance",
+    "amount_usd": 15.0,
+    "description": "Autopay - renters_insurance"
+  },
+  {
+    "date": "2026-06-27",
+    "category": "streaming",
+    "amount_usd": 15.49,
+    "description": "Autopay - streaming"
+  },
+  {
+    "date": "2026-06-27",
+    "category": "groceries",
+    "amount_usd": 92.81,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-06-27",
+    "category": "shopping",
+    "amount_usd": 75.16,
+    "description": "Ulta"
+  },
+  {
+    "date": "2026-06-27",
+    "category": "entertainment",
+    "amount_usd": 41.66,
+    "description": "Bowling"
+  },
+  {
+    "date": "2026-07-01",
+    "category": "rent",
+    "amount_usd": 2400.0,
+    "description": "Autopay - rent"
+  },
+  {
+    "date": "2026-07-02",
+    "category": "groceries",
+    "amount_usd": 56.46,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-07-03",
+    "category": "solidcore",
+    "amount_usd": 258.0,
+    "description": "Autopay - solidcore"
+  },
+  {
+    "date": "2026-07-03",
+    "category": "eating_out",
+    "amount_usd": 45.23,
+    "description": "Thai kitchen"
+  },
+  {
+    "date": "2026-07-04",
+    "category": "transport",
+    "amount_usd": 24.69,
+    "description": "Costco gas"
+  },
+  {
+    "date": "2026-07-05",
+    "category": "student_loans",
+    "amount_usd": 350.0,
+    "description": "Autopay - student_loans"
+  },
+  {
+    "date": "2026-07-05",
+    "category": "groceries",
+    "amount_usd": 111.24,
+    "description": "Whole Foods"
+  },
+  {
+    "date": "2026-07-06",
+    "category": "shopping",
+    "amount_usd": 100.95,
+    "description": "Sephora"
+  },
+  {
+    "date": "2026-07-07",
+    "category": "spotify",
+    "amount_usd": 6.99,
+    "description": "Autopay - spotify"
+  },
+  {
+    "date": "2026-07-08",
+    "category": "internet",
+    "amount_usd": 70.0,
+    "description": "Autopay - internet"
+  },
+  {
+    "date": "2026-07-09",
+    "category": "eating_out",
+    "amount_usd": 50.73,
+    "description": "Sweetgreen"
+  },
+  {
+    "date": "2026-07-10",
+    "category": "orthodontic_payment",
+    "amount_usd": 169.0,
+    "description": "Autopay - orthodontic_payment"
+  },
+  {
+    "date": "2026-07-10",
+    "category": "groceries",
+    "amount_usd": 72.83,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-07-10",
+    "category": "shopping",
+    "amount_usd": 143.51,
+    "description": "Sephora"
+  },
+  {
+    "date": "2026-07-10",
+    "category": "transport",
+    "amount_usd": 54.34,
+    "description": "Shell"
+  },
+  {
+    "date": "2026-07-12",
+    "category": "phone",
+    "amount_usd": 70.0,
+    "description": "Autopay - phone"
+  },
+  {
+    "date": "2026-07-12",
+    "category": "entertainment",
+    "amount_usd": 24.81,
+    "description": "AMC"
+  },
+  {
+    "date": "2026-07-14",
+    "category": "applecare",
+    "amount_usd": 20.0,
+    "description": "Autopay - applecare"
+  },
+  {
+    "date": "2026-07-16",
+    "category": "savings",
+    "amount_usd": 1667.0,
+    "description": "Transfer - savings"
+  },
+  {
+    "date": "2026-07-16",
+    "category": "roth_ira",
+    "amount_usd": 625.0,
+    "description": "Transfer - roth_ira"
+  },
+  {
+    "date": "2026-07-18",
+    "category": "utilities",
+    "amount_usd": 120.0,
+    "description": "Autopay - utilities"
+  },
+  {
+    "date": "2026-07-19",
+    "category": "entertainment",
+    "amount_usd": 39.88,
+    "description": "Bowling"
+  },
+  {
+    "date": "2026-07-20",
+    "category": "car_insurance",
+    "amount_usd": 180.0,
+    "description": "Autopay - car_insurance"
+  },
+  {
+    "date": "2026-07-20",
+    "category": "eating_out",
+    "amount_usd": 48.13,
+    "description": "Sushi bar"
+  },
+  {
+    "date": "2026-07-20",
+    "category": "transport",
+    "amount_usd": 37.49,
+    "description": "Shell"
+  },
+  {
+    "date": "2026-07-20",
+    "category": "health",
+    "amount_usd": 34.21,
+    "description": "CVS copay"
+  },
+  {
+    "date": "2026-07-21",
+    "category": "icloud",
+    "amount_usd": 2.99,
+    "description": "Autopay - icloud"
+  },
+  {
+    "date": "2026-07-21",
+    "category": "eating_out",
+    "amount_usd": 41.0,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-07-21",
+    "category": "eating_out",
+    "amount_usd": 47.99,
+    "description": "Sweetgreen"
+  },
+  {
+    "date": "2026-07-21",
+    "category": "transport",
+    "amount_usd": 21.78,
+    "description": "Costco gas"
+  },
+  {
+    "date": "2026-07-22",
+    "category": "groceries",
+    "amount_usd": 79.55,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-07-24",
+    "category": "shopping",
+    "amount_usd": 123.57,
+    "description": "Amazon - supplements"
+  },
+  {
+    "date": "2026-07-25",
+    "category": "renters_insurance",
+    "amount_usd": 15.0,
+    "description": "Autopay - renters_insurance"
+  },
+  {
+    "date": "2026-07-25",
+    "category": "eating_out",
+    "amount_usd": 28.19,
+    "description": "Sweetgreen"
+  },
+  {
+    "date": "2026-07-26",
+    "category": "groceries",
+    "amount_usd": 50.49,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-07-26",
+    "category": "groceries",
+    "amount_usd": 110.73,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-07-26",
+    "category": "shopping",
+    "amount_usd": 226.07,
+    "description": "Target"
+  },
+  {
+    "date": "2026-07-27",
+    "category": "streaming",
+    "amount_usd": 15.49,
+    "description": "Autopay - streaming"
+  },
+  {
+    "date": "2026-07-27",
+    "category": "eating_out",
+    "amount_usd": 27.34,
+    "description": "Sushi bar"
+  },
+  {
+    "date": "2026-08-01",
+    "category": "rent",
+    "amount_usd": 2400.0,
+    "description": "Autopay - rent"
+  },
+  {
+    "date": "2026-08-01",
+    "category": "groceries",
+    "amount_usd": 112.82,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-08-02",
+    "category": "groceries",
+    "amount_usd": 73.22,
+    "description": "Whole Foods"
+  },
+  {
+    "date": "2026-08-02",
+    "category": "eating_out",
+    "amount_usd": 43.7,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-08-03",
+    "category": "solidcore",
+    "amount_usd": 258.0,
+    "description": "Autopay - solidcore"
+  },
+  {
+    "date": "2026-08-05",
+    "category": "student_loans",
+    "amount_usd": 350.0,
+    "description": "Autopay - student_loans"
+  },
+  {
+    "date": "2026-08-06",
+    "category": "shopping",
+    "amount_usd": 128.02,
+    "description": "Target"
+  },
+  {
+    "date": "2026-08-06",
+    "category": "entertainment",
+    "amount_usd": 30.51,
+    "description": "Bowling"
+  },
+  {
+    "date": "2026-08-06",
+    "category": "health",
+    "amount_usd": 30.51,
+    "description": "Walgreens"
+  },
+  {
+    "date": "2026-08-07",
+    "category": "spotify",
+    "amount_usd": 6.99,
+    "description": "Autopay - spotify"
+  },
+  {
+    "date": "2026-08-08",
+    "category": "internet",
+    "amount_usd": 70.0,
+    "description": "Autopay - internet"
+  },
+  {
+    "date": "2026-08-10",
+    "category": "orthodontic_payment",
+    "amount_usd": 169.0,
+    "description": "Autopay - orthodontic_payment"
+  },
+  {
+    "date": "2026-08-10",
+    "category": "groceries",
+    "amount_usd": 97.46,
+    "description": "Trader Joe's"
+  },
+  {
+    "date": "2026-08-12",
+    "category": "phone",
+    "amount_usd": 70.0,
+    "description": "Autopay - phone"
+  },
+  {
+    "date": "2026-08-12",
+    "category": "transport",
+    "amount_usd": 43.83,
+    "description": "Costco gas"
+  },
+  {
+    "date": "2026-08-12",
+    "category": "entertainment",
+    "amount_usd": 32.56,
+    "description": "Concert tickets"
+  },
+  {
+    "date": "2026-08-14",
+    "category": "applecare",
+    "amount_usd": 20.0,
+    "description": "Autopay - applecare"
+  },
+  {
+    "date": "2026-08-14",
+    "category": "groceries",
+    "amount_usd": 51.66,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-08-14",
+    "category": "eating_out",
+    "amount_usd": 44.82,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-08-14",
+    "category": "eating_out",
+    "amount_usd": 41.07,
+    "description": "Cava"
+  },
+  {
+    "date": "2026-08-15",
+    "category": "eating_out",
+    "amount_usd": 34.9,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-08-15",
+    "category": "shopping",
+    "amount_usd": 130.08,
+    "description": "Sephora"
+  },
+  {
+    "date": "2026-08-16",
+    "category": "savings",
+    "amount_usd": 1667.0,
+    "description": "Transfer - savings"
+  },
+  {
+    "date": "2026-08-16",
+    "category": "roth_ira",
+    "amount_usd": 625.0,
+    "description": "Transfer - roth_ira"
+  },
+  {
+    "date": "2026-08-16",
+    "category": "shopping",
+    "amount_usd": 127.12,
+    "description": "Sephora"
+  },
+  {
+    "date": "2026-08-17",
+    "category": "shopping",
+    "amount_usd": 137.97,
+    "description": "Ulta"
+  },
+  {
+    "date": "2026-08-18",
+    "category": "utilities",
+    "amount_usd": 120.0,
+    "description": "Autopay - utilities"
+  },
+  {
+    "date": "2026-08-19",
+    "category": "transport",
+    "amount_usd": 44.34,
+    "description": "Chevron"
+  },
+  {
+    "date": "2026-08-20",
+    "category": "car_insurance",
+    "amount_usd": 180.0,
+    "description": "Autopay - car_insurance"
+  },
+  {
+    "date": "2026-08-21",
+    "category": "icloud",
+    "amount_usd": 2.99,
+    "description": "Autopay - icloud"
+  },
+  {
+    "date": "2026-08-23",
+    "category": "eating_out",
+    "amount_usd": 45.62,
+    "description": "Cava"
+  },
+  {
+    "date": "2026-08-24",
+    "category": "groceries",
+    "amount_usd": 89.36,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-08-24",
+    "category": "eating_out",
+    "amount_usd": 26.95,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-08-24",
+    "category": "eating_out",
+    "amount_usd": 28.4,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-08-25",
+    "category": "renters_insurance",
+    "amount_usd": 15.0,
+    "description": "Autopay - renters_insurance"
+  },
+  {
+    "date": "2026-08-25",
+    "category": "transport",
+    "amount_usd": 46.15,
+    "description": "Chevron"
+  },
+  {
+    "date": "2026-08-26",
+    "category": "transport",
+    "amount_usd": 33.04,
+    "description": "Shell"
+  },
+  {
+    "date": "2026-08-27",
+    "category": "streaming",
+    "amount_usd": 15.49,
+    "description": "Autopay - streaming"
+  },
+  {
+    "date": "2026-08-27",
+    "category": "groceries",
+    "amount_usd": 99.35,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-09-01",
+    "category": "rent",
+    "amount_usd": 2400.0,
+    "description": "Autopay - rent"
+  },
+  {
+    "date": "2026-09-03",
+    "category": "solidcore",
+    "amount_usd": 258.0,
+    "description": "Autopay - solidcore"
+  },
+  {
+    "date": "2026-09-03",
+    "category": "transport",
+    "amount_usd": 29.11,
+    "description": "Chevron"
+  },
+  {
+    "date": "2026-09-04",
+    "category": "groceries",
+    "amount_usd": 101.35,
+    "description": "Trader Joe's"
+  },
+  {
+    "date": "2026-09-05",
+    "category": "student_loans",
+    "amount_usd": 350.0,
+    "description": "Autopay - student_loans"
+  },
+  {
+    "date": "2026-09-06",
+    "category": "shopping",
+    "amount_usd": 118.83,
+    "description": "Target"
+  },
+  {
+    "date": "2026-09-06",
+    "category": "transport",
+    "amount_usd": 46.22,
+    "description": "Chevron"
+  },
+  {
+    "date": "2026-09-07",
+    "category": "spotify",
+    "amount_usd": 6.99,
+    "description": "Autopay - spotify"
+  },
+  {
+    "date": "2026-09-07",
+    "category": "groceries",
+    "amount_usd": 56.55,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-09-07",
+    "category": "eating_out",
+    "amount_usd": 23.81,
+    "description": "Thai kitchen"
+  },
+  {
+    "date": "2026-09-08",
+    "category": "internet",
+    "amount_usd": 70.0,
+    "description": "Autopay - internet"
+  },
+  {
+    "date": "2026-09-08",
+    "category": "eating_out",
+    "amount_usd": 37.86,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-09-08",
+    "category": "health",
+    "amount_usd": 30.39,
+    "description": "CVS copay"
+  },
+  {
+    "date": "2026-09-10",
+    "category": "orthodontic_payment",
+    "amount_usd": 169.0,
+    "description": "Autopay - orthodontic_payment"
+  },
+  {
+    "date": "2026-09-10",
+    "category": "eating_out",
+    "amount_usd": 26.06,
+    "description": "Sweetgreen"
+  },
+  {
+    "date": "2026-09-11",
+    "category": "groceries",
+    "amount_usd": 66.04,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-09-11",
+    "category": "eating_out",
+    "amount_usd": 53.01,
+    "description": "Sweetgreen"
+  },
+  {
+    "date": "2026-09-11",
+    "category": "shopping",
+    "amount_usd": 129.78,
+    "description": "Lululemon"
+  },
+  {
+    "date": "2026-09-12",
+    "category": "phone",
+    "amount_usd": 70.0,
+    "description": "Autopay - phone"
+  },
+  {
+    "date": "2026-09-14",
+    "category": "applecare",
+    "amount_usd": 20.0,
+    "description": "Autopay - applecare"
+  },
+  {
+    "date": "2026-09-14",
+    "category": "groceries",
+    "amount_usd": 94.59,
+    "description": "Trader Joe's"
+  },
+  {
+    "date": "2026-09-14",
+    "category": "shopping",
+    "amount_usd": 144.16,
+    "description": "Amazon - supplements"
+  },
+  {
+    "date": "2026-09-15",
+    "category": "eating_out",
+    "amount_usd": 50.65,
+    "description": "Thai kitchen"
+  },
+  {
+    "date": "2026-09-16",
+    "category": "savings",
+    "amount_usd": 1667.0,
+    "description": "Transfer - savings"
+  },
+  {
+    "date": "2026-09-16",
+    "category": "roth_ira",
+    "amount_usd": 625.0,
+    "description": "Transfer - roth_ira"
+  },
+  {
+    "date": "2026-09-16",
+    "category": "eating_out",
+    "amount_usd": 58.34,
+    "description": "Sweetgreen"
+  },
+  {
+    "date": "2026-09-18",
+    "category": "utilities",
+    "amount_usd": 120.0,
+    "description": "Autopay - utilities"
+  },
+  {
+    "date": "2026-09-18",
+    "category": "groceries",
+    "amount_usd": 44.22,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-09-18",
+    "category": "transport",
+    "amount_usd": 32.43,
+    "description": "Shell"
+  },
+  {
+    "date": "2026-09-18",
+    "category": "entertainment",
+    "amount_usd": 52.48,
+    "description": "AMC"
+  },
+  {
+    "date": "2026-09-20",
+    "category": "car_insurance",
+    "amount_usd": 180.0,
+    "description": "Autopay - car_insurance"
+  },
+  {
+    "date": "2026-09-20",
+    "category": "eating_out",
+    "amount_usd": 37.85,
+    "description": "Thai kitchen"
+  },
+  {
+    "date": "2026-09-20",
+    "category": "shopping",
+    "amount_usd": 105.5,
+    "description": "Amazon - supplements"
+  },
+  {
+    "date": "2026-09-21",
+    "category": "icloud",
+    "amount_usd": 2.99,
+    "description": "Autopay - icloud"
+  },
+  {
+    "date": "2026-09-21",
+    "category": "entertainment",
+    "amount_usd": 36.05,
+    "description": "Bowling"
+  },
+  {
+    "date": "2026-09-25",
+    "category": "renters_insurance",
+    "amount_usd": 15.0,
+    "description": "Autopay - renters_insurance"
+  },
+  {
+    "date": "2026-09-25",
+    "category": "transport",
+    "amount_usd": 34.94,
+    "description": "Chevron"
+  },
+  {
+    "date": "2026-09-27",
+    "category": "streaming",
+    "amount_usd": 15.49,
+    "description": "Autopay - streaming"
+  },
+  {
+    "date": "2026-09-27",
+    "category": "groceries",
+    "amount_usd": 122.21,
+    "description": "Trader Joe's"
+  },
+  {
+    "date": "2026-10-01",
+    "category": "rent",
+    "amount_usd": 2400.0,
+    "description": "Autopay - rent"
+  },
+  {
+    "date": "2026-10-02",
+    "category": "groceries",
+    "amount_usd": 105.71,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-10-03",
+    "category": "solidcore",
+    "amount_usd": 258.0,
+    "description": "Autopay - solidcore"
+  },
+  {
+    "date": "2026-10-04",
+    "category": "eating_out",
+    "amount_usd": 44.43,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-10-05",
+    "category": "student_loans",
+    "amount_usd": 350.0,
+    "description": "Autopay - student_loans"
+  },
+  {
+    "date": "2026-10-07",
+    "category": "spotify",
+    "amount_usd": 6.99,
+    "description": "Autopay - spotify"
+  },
+  {
+    "date": "2026-10-07",
+    "category": "shopping",
+    "amount_usd": 64.85,
+    "description": "Lululemon"
+  },
+  {
+    "date": "2026-10-08",
+    "category": "internet",
+    "amount_usd": 70.0,
+    "description": "Autopay - internet"
+  },
+  {
+    "date": "2026-10-08",
+    "category": "transport",
+    "amount_usd": 34.86,
+    "description": "Chevron"
+  },
+  {
+    "date": "2026-10-09",
+    "category": "transport",
+    "amount_usd": 62.46,
+    "description": "Shell"
+  },
+  {
+    "date": "2026-10-10",
+    "category": "orthodontic_payment",
+    "amount_usd": 169.0,
+    "description": "Autopay - orthodontic_payment"
+  },
+  {
+    "date": "2026-10-10",
+    "category": "eating_out",
+    "amount_usd": 42.45,
+    "description": "Sweetgreen"
+  },
+  {
+    "date": "2026-10-11",
+    "category": "eating_out",
+    "amount_usd": 31.8,
+    "description": "Sweetgreen"
+  },
+  {
+    "date": "2026-10-11",
+    "category": "entertainment",
+    "amount_usd": 43.45,
+    "description": "Bowling"
+  },
+  {
+    "date": "2026-10-12",
+    "category": "phone",
+    "amount_usd": 70.0,
+    "description": "Autopay - phone"
+  },
+  {
+    "date": "2026-10-12",
+    "category": "shopping",
+    "amount_usd": 74.6,
+    "description": "Amazon - supplements"
+  },
+  {
+    "date": "2026-10-14",
+    "category": "applecare",
+    "amount_usd": 20.0,
+    "description": "Autopay - applecare"
+  },
+  {
+    "date": "2026-10-16",
+    "category": "savings",
+    "amount_usd": 1667.0,
+    "description": "Transfer - savings"
+  },
+  {
+    "date": "2026-10-16",
+    "category": "roth_ira",
+    "amount_usd": 625.0,
+    "description": "Transfer - roth_ira"
+  },
+  {
+    "date": "2026-10-16",
+    "category": "groceries",
+    "amount_usd": 52.15,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-10-16",
+    "category": "transport",
+    "amount_usd": 38.97,
+    "description": "Shell"
+  },
+  {
+    "date": "2026-10-17",
+    "category": "eating_out",
+    "amount_usd": 20.2,
+    "description": "Sushi bar"
+  },
+  {
+    "date": "2026-10-17",
+    "category": "health",
+    "amount_usd": 54.87,
+    "description": "Walgreens"
+  },
+  {
+    "date": "2026-10-18",
+    "category": "utilities",
+    "amount_usd": 120.0,
+    "description": "Autopay - utilities"
+  },
+  {
+    "date": "2026-10-18",
+    "category": "groceries",
+    "amount_usd": 48.61,
+    "description": "Trader Joe's"
+  },
+  {
+    "date": "2026-10-18",
+    "category": "eating_out",
+    "amount_usd": 53.8,
+    "description": "Sushi bar"
+  },
+  {
+    "date": "2026-10-18",
+    "category": "shopping",
+    "amount_usd": 59.3,
+    "description": "Target"
+  },
+  {
+    "date": "2026-10-19",
+    "category": "shopping",
+    "amount_usd": 57.38,
+    "description": "Sephora"
+  },
+  {
+    "date": "2026-10-19",
+    "category": "entertainment",
+    "amount_usd": 34.06,
+    "description": "Concert tickets"
+  },
+  {
+    "date": "2026-10-20",
+    "category": "car_insurance",
+    "amount_usd": 180.0,
+    "description": "Autopay - car_insurance"
+  },
+  {
+    "date": "2026-10-20",
+    "category": "groceries",
+    "amount_usd": 65.89,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-10-21",
+    "category": "icloud",
+    "amount_usd": 2.99,
+    "description": "Autopay - icloud"
+  },
+  {
+    "date": "2026-10-23",
+    "category": "groceries",
+    "amount_usd": 79.83,
+    "description": "Whole Foods"
+  },
+  {
+    "date": "2026-10-24",
+    "category": "eating_out",
+    "amount_usd": 51.97,
+    "description": "Thai kitchen"
+  },
+  {
+    "date": "2026-10-25",
+    "category": "renters_insurance",
+    "amount_usd": 15.0,
+    "description": "Autopay - renters_insurance"
+  },
+  {
+    "date": "2026-10-26",
+    "category": "groceries",
+    "amount_usd": 105.34,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-10-26",
+    "category": "transport",
+    "amount_usd": 29.45,
+    "description": "Shell"
+  },
+  {
+    "date": "2026-10-27",
+    "category": "streaming",
+    "amount_usd": 15.49,
+    "description": "Autopay - streaming"
+  },
+  {
+    "date": "2026-10-28",
+    "category": "eating_out",
+    "amount_usd": 32.48,
+    "description": "Sweetgreen"
+  },
+  {
+    "date": "2026-11-01",
+    "category": "rent",
+    "amount_usd": 2400.0,
+    "description": "Autopay - rent"
+  },
+  {
+    "date": "2026-11-01",
+    "category": "groceries",
+    "amount_usd": 93.46,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-11-01",
+    "category": "shopping",
+    "amount_usd": 157.79,
+    "description": "Sephora"
+  },
+  {
+    "date": "2026-11-02",
+    "category": "eating_out",
+    "amount_usd": 46.79,
+    "description": "Thai kitchen"
+  },
+  {
+    "date": "2026-11-02",
+    "category": "health",
+    "amount_usd": 37.5,
+    "description": "Walgreens"
+  },
+  {
+    "date": "2026-11-03",
+    "category": "solidcore",
+    "amount_usd": 258.0,
+    "description": "Autopay - solidcore"
+  },
+  {
+    "date": "2026-11-03",
+    "category": "eating_out",
+    "amount_usd": 50.5,
+    "description": "Cava"
+  },
+  {
+    "date": "2026-11-05",
+    "category": "student_loans",
+    "amount_usd": 350.0,
+    "description": "Autopay - student_loans"
+  },
+  {
+    "date": "2026-11-05",
+    "category": "eating_out",
+    "amount_usd": 26.08,
+    "description": "Cava"
+  },
+  {
+    "date": "2026-11-06",
+    "category": "eating_out",
+    "amount_usd": 41.35,
+    "description": "Thai kitchen"
+  },
+  {
+    "date": "2026-11-07",
+    "category": "spotify",
+    "amount_usd": 6.99,
+    "description": "Autopay - spotify"
+  },
+  {
+    "date": "2026-11-08",
+    "category": "internet",
+    "amount_usd": 70.0,
+    "description": "Autopay - internet"
+  },
+  {
+    "date": "2026-11-08",
+    "category": "eating_out",
+    "amount_usd": 42.73,
+    "description": "Coffee shop"
+  },
+  {
+    "date": "2026-11-09",
+    "category": "transport",
+    "amount_usd": 43.52,
+    "description": "Shell"
+  },
+  {
+    "date": "2026-11-10",
+    "category": "orthodontic_payment",
+    "amount_usd": 169.0,
+    "description": "Autopay - orthodontic_payment"
+  },
+  {
+    "date": "2026-11-11",
+    "category": "eating_out",
+    "amount_usd": 25.56,
+    "description": "Thai kitchen"
+  },
+  {
+    "date": "2026-11-12",
+    "category": "phone",
+    "amount_usd": 70.0,
+    "description": "Autopay - phone"
+  },
+  {
+    "date": "2026-11-12",
+    "category": "groceries",
+    "amount_usd": 102.22,
+    "description": "Whole Foods"
+  },
+  {
+    "date": "2026-11-13",
+    "category": "shopping",
+    "amount_usd": 141.54,
+    "description": "Ulta"
+  },
+  {
+    "date": "2026-11-14",
+    "category": "applecare",
+    "amount_usd": 20.0,
+    "description": "Autopay - applecare"
+  },
+  {
+    "date": "2026-11-16",
+    "category": "savings",
+    "amount_usd": 1667.0,
+    "description": "Transfer - savings"
+  },
+  {
+    "date": "2026-11-16",
+    "category": "roth_ira",
+    "amount_usd": 625.0,
+    "description": "Transfer - roth_ira"
+  },
+  {
+    "date": "2026-11-17",
+    "category": "transport",
+    "amount_usd": 29.91,
+    "description": "Shell"
+  },
+  {
+    "date": "2026-11-17",
+    "category": "entertainment",
+    "amount_usd": 31.42,
+    "description": "Concert tickets"
+  },
+  {
+    "date": "2026-11-18",
+    "category": "utilities",
+    "amount_usd": 120.0,
+    "description": "Autopay - utilities"
+  },
+  {
+    "date": "2026-11-20",
+    "category": "car_insurance",
+    "amount_usd": 180.0,
+    "description": "Autopay - car_insurance"
+  },
+  {
+    "date": "2026-11-20",
+    "category": "groceries",
+    "amount_usd": 94.41,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-11-20",
+    "category": "eating_out",
+    "amount_usd": 60.49,
+    "description": "Sweetgreen"
+  },
+  {
+    "date": "2026-11-20",
+    "category": "shopping",
+    "amount_usd": 137.85,
+    "description": "Amazon - supplements"
+  },
+  {
+    "date": "2026-11-21",
+    "category": "icloud",
+    "amount_usd": 2.99,
+    "description": "Autopay - icloud"
+  },
+  {
+    "date": "2026-11-23",
+    "category": "groceries",
+    "amount_usd": 65.09,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-11-23",
+    "category": "groceries",
+    "amount_usd": 69.08,
+    "description": "Farmers market"
+  },
+  {
+    "date": "2026-11-23",
+    "category": "shopping",
+    "amount_usd": 161.95,
+    "description": "Amazon - supplements"
+  },
+  {
+    "date": "2026-11-23",
+    "category": "entertainment",
+    "amount_usd": 24.44,
+    "description": "Concert tickets"
+  },
+  {
+    "date": "2026-11-25",
+    "category": "renters_insurance",
+    "amount_usd": 15.0,
+    "description": "Autopay - renters_insurance"
+  },
+  {
+    "date": "2026-11-25",
+    "category": "transport",
+    "amount_usd": 37.97,
+    "description": "Costco gas"
+  },
+  {
+    "date": "2026-11-26",
+    "category": "groceries",
+    "amount_usd": 55.19,
+    "description": "Sprouts"
+  },
+  {
+    "date": "2026-11-26",
+    "category": "transport",
+    "amount_usd": 46.23,
+    "description": "Costco gas"
+  },
+  {
+    "date": "2026-11-27",
+    "category": "streaming",
+    "amount_usd": 15.49,
+    "description": "Autopay - streaming"
+  },
+  {
+    "date": "2026-12-01",
+    "category": "rent",
+    "amount_usd": 2400.0,
+    "description": "Autopay - rent"
+  },
+  {
+    "date": "2026-12-01",
+    "category": "groceries",
+    "amount_usd": 53.63,
+    "description": "Trader Joe's"
+  },
+  {
+    "date": "2026-12-02",
+    "category": "shopping",
+    "amount_usd": 66.13,
+    "description": "Ulta"
+  }
+]

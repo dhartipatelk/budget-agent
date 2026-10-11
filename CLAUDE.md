@@ -18,29 +18,31 @@ Due: Monday Oct 12, 2026. Solo, 20% of the course grade. Graded on: whether it i
 Done so far:
 
 - Step 1: plan and file structure agreed (Oct 11, 2026). Decisions recorded below.
-- Step 2 PLAN agreed (Oct 11, 2026). See "Step 2 plan" below. `generate_data.py` is NOT written yet.
+- Step 2: `generate_data.py` written and run (Oct 11, 2026). Verified: identical output on re-run, no scenario labels in the data, numbers match the plan. Fixed after review: `gas` renamed `transport`, wedding note, goal transfer names, slack and decision #21 corrected to match the data.
 
-Not done yet: build steps 2 to 8.
+Not done yet: build steps 3 to 8.
 
-Next session starts here: write `generate_data.py` exactly as in "Step 2 plan" below, run it, then show me a sample of each file so I can read the output before committing.
+Next session starts here: step 3, the tools in `tools.py`. Give the plan first, then build and test each tool by hand.
 
-### Step 2 plan (agreed, not yet written)
+### Step 2 plan (built; numbers below match the generated data)
 
-- Fixed seed: `random.seed(42)`. Never uses the real date.
+- Fixed seed (42). Never uses the real date. All numbers below are made up (confirmed Oct 11, 2026).
 - One fictional person ("Maya") in all four scenarios; each scenario is a different "today" with 12 months of history before it. Each folder is self-contained with all 7 files.
-- Income: $4,200/month, paid $2,100 on the 1st and $2,100 on the 15th.
-- Fixed bills (`fixed_bill`): rent $1,450, car payment $320, car insurance $145, phone $65, internet $60 (total $2,040).
-- Subscriptions (`subscription`): streaming $16, music $11, gym $40 (total $67).
-- Typical flexible spend (with about ±10% random noise): groceries ~$380, transport (gas) ~$140, eating out ~$220, shopping ~$150, entertainment ~$80.
-- Goals: emergency fund ($6,000 target, ~$3,200 saved, $400/month); Roth IRA ($200/month).
-- Priorities (user's own words): "Emergency fund comes first." "I'd rather keep seeing friends than invest more right now." "I try to keep eating out under $350 a month."
+- Income: $8,700/month take-home, paid $4,350 on the 1st and $4,350 on the 15th.
+- Fixed bills (`fixed_bill`): rent $2,400, student loans $350, car insurance $180, utilities $120, phone $70, internet $70, renters insurance $15, orthodontic payment $169 (final payment 2027-02-10, so 3 left in December). Total $3,374.
+- Subscriptions (`subscription`): Solidcore $258, AppleCare $20, streaming $15.49, Spotify $6.99, iCloud $2.99. Total about $303.
+- Typical flexible spend (random noise): groceries ~$500, eating out ~$270, shopping $200 to $600 (supplements, hygiene, clothes, makeup, skincare), transport (gas) ~$160, entertainment ~$80, health/copays ~$50. Total about $1,410.
+- Goal transfers are logged in transactions under the SAME names as the goals (`savings`, `roth_ira`), so there is no naming mismatch.
+- Goals (NOT fixed bills, so the agent may trade them off): save $20,000 in 2026 ($1,667/month), Roth IRA $625/month ($7,500 for the year), brokerage investing (no target).
+- Monthly slack before brokerage, measured from the generated data (income minus everything spent, full months): about $1,200 on average, about $1,000 to $1,470 in normal months. Lower in last October (birthday) and last December (gifts).
+- Priorities (Maya's own words, not a ranking): "Saving $20,000 this year is my main money goal." "Contributing to my Roth IRA every month is a priority." "Other investing, like stocks or crypto, matters less to me than experiences and memories with friends." "Eating clean matters to me. I don't want to cut back on grocery quality." "Solidcore is important for my health, and I'd keep it if I can." "I try to keep eating out under $400 a month."
 
 | Folder | Today | What is different | What it should force |
 |---|---|---|---|
-| `quiet/` | 2026-07-02 | Nothing; about $500 slack | Few tool calls, short answer |
-| `birthday/` | 2026-10-03 | Calendar: "My birthday" Oct 18. Last October's history has a $260 dinner and $180 shopping | Model looks back at last year and sets money aside |
-| `over_budget/` | 2026-12-02 | Friend's wedding in Denver (flight $380 + hotel $420 listed on the event) plus holiday gifts (~$300 last December); about $575 over | Model must cut and name the cost |
-| `drift/` | 2026-08-03 | Eating out rises 5%/month, ~$180 to ~$310; never passes $350 | Model notices the trend by comparing averages |
+| `quiet/` | 2026-07-02 | Nothing; about $1,200 slack | Few tool calls; decide where the extra goes |
+| `birthday/` | 2026-10-03 | Calendar: "My birthday" Oct 18 (no cost listed). Last October's history has a $260 dinner and $180 shopping | Model looks back at last year and sets money aside |
+| `over_budget/` | 2026-12-02 | Friend's wedding in Denver Dec 18 to 20 (flight $520 + hotel $830 = $1,350 listed on the event, "due before the trip", not yet paid) plus holiday gifts (~$400 last December) and a past wedding gift ($200, May 2026). About $150 to $250 over from the wedding alone; about $750 to $850 over once last year's gifts are counted | Model must cut and name the cost; Roth and savings both protected by priorities, so there is no obvious answer |
+| `drift/` | 2026-08-03 | Eating out rises 5%/month, ~$220 to ~$375; never passes the stated $400 | Model notices the trend by comparing averages |
 
 Files per folder: `scenario.json` (today), `balance.json`, `recurring.json`, `transactions.json` (~300 rows: date, category, amount, description), `calendar.json`, `goals.json`, `priorities.json`. All flat records, units and dates in field names. No scenario labels or hints in any file.
 
@@ -58,11 +60,18 @@ Decisions made along the way:
 10. **Optional tools skipped** (`get_spending_trend`, `get_past_decisions`) because of the deadline. Drift can be found by comparing `get_category_average` over 3 vs 6 months.
 11. **The scenario folder is bound by the code, never a model argument.** Tools receive the data folder from my code; the model never sees or chooses it.
 12. **Allocation checks live in `checks.py`**, a separate small file, because there are four checks (see "The final answer and the math check").
-13. **Recurring items have a `kind` field: `fixed_bill` or `subscription`.** Only `fixed_bill` items (rent, car payment, insurance) must appear at their full amount. Cancelling a subscription is a legitimate tradeoff, so it is not flagged.
+13. **Recurring items have a `kind` field: `fixed_bill` or `subscription`.** Only `fixed_bill` items (rent, loans, insurance, etc.) must appear at their full amount. Cancelling a subscription is a legitimate tradeoff, so it is not flagged.
 14. **Purchase verdicts are yes / tight / no**, with "essentials" defined (see "The final answer and the math check"). "No" depends on essentials and stated priorities, not arithmetic alone, so it stays a real judgment that an if-statement could not make.
-15. **A $350 eating-out limit is in the priorities.** The drift scenario "never breaches a limit," so a limit must exist for drift to mean anything.
-16. **A transport (gas) category exists in transactions**, so the "transport needed for work" essential has data behind it.
+15. **A $400 eating-out limit is in the priorities** (raised from $350 when the budget changed). The drift scenario "never breaches a limit," so a limit must exist for drift to mean anything.
+16. **A `transport` category exists in transactions** (gas purchases), named to match the "transport needed for work" essential, so the model does not have to guess whether gas counts. (Was `gas`; renamed after review.)
 17. **The wedding event lists its known costs; the birthday does not.** Booked prices are facts. For the birthday, the model has to dig through last year's history, so the two paths differ.
+18. **Budget redesigned (Oct 11, 2026):** income $8,700, car payment removed, groceries $500, eating out $270. Numbers are made up, not the student's real finances.
+19. **Roth IRA and savings are goals, not fixed bills.** A fixed bill can never be reduced (check 2). The priorities protect them instead, so the agent can still weigh them in a true crunch, and a trace shows whether it respected Maya's priorities.
+20. **The orthodontic payment has a final payment date** (2027-02-10). The data states only the fact; a good agent may reason "this frees $169 soon." An if-statement would not.
+21. **Wedding costs set to $1,350, and December is kept as is.** Measured from the data: the wedding alone puts December only about $150 to $250 over; it becomes about $750 to $850 over once the model finds last December's holiday gifts (~$400) and the past wedding gift ($200). Kept deliberately: the deeper crunch only appears if the agent reads history, which is the judgment the baseline cannot make. (An earlier version of this note wrongly said "over even before gifts"; corrected after review.)
+23. **The wedding note says "due before the trip"**, not "paid this month." The flight and hotel are not in the transactions or balance, so "paid" would have contradicted the data.
+24. **Goal transfer categories renamed** from `savings_transfer` / `roth_ira_contribution` to `savings` / `roth_ira`, matching the goal names, to avoid a naming mismatch later.
+22. **Priorities are designed to conflict** (savings vs Roth vs experiences; Solidcore "if I can"). Priorities that never conflict give the model nothing to judge.
 
 Open questions: (anything I still need to ask my professor)
 
@@ -77,6 +86,8 @@ Keep this list current so a fresh session knows what each file is for. (Fill in 
 - `CLAUDE.md`: project instructions and live status (this file).
 - `.gitignore`: keeps `.env`, `venv/`, `__pycache__/` out of git.
 - `requirements.txt`: Python packages (`anthropic`, `python-dotenv`, and their dependencies). No frameworks.
+- `generate_data.py`: builds the synthetic data (fixed seed 42). Run `python3 generate_data.py`.
+- `data/<scenario>/`: generated JSON for `quiet`, `birthday`, `over_budget`, `drift` (7 files each). Do not edit by hand; change the generator and re-run.
 
 ## Who I am and how to work with me
 

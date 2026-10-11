@@ -1,0 +1,106 @@
+[
+  {
+    "name": "rent",
+    "amount_usd": 2400.0,
+    "due_day_of_month": 1,
+    "kind": "fixed_bill",
+    "final_payment_date": null,
+    "payments_remaining": null
+  },
+  {
+    "name": "student_loans",
+    "amount_usd": 350.0,
+    "due_day_of_month": 5,
+    "kind": "fixed_bill",
+    "final_payment_date": null,
+    "payments_remaining": null
+  },
+  {
+    "name": "internet",
+    "amount_usd": 70.0,
+    "due_day_of_month": 8,
+    "kind": "fixed_bill",
+    "final_payment_date": null,
+    "payments_remaining": null
+  },
+  {
+    "name": "orthodontic_payment",
+    "amount_usd": 169.0,
+    "due_day_of_month": 10,
+    "kind": "fixed_bill",
+    "final_payment_date": "2027-02-10",
+    "payments_remaining": 7
+  },
+  {
+    "name": "phone",
+    "amount_usd": 70.0,
+    "due_day_of_month": 12,
+    "kind": "fixed_bill",
+    "final_payment_date": null,
+    "payments_remaining": null
+  },
+  {
+    "name": "utilities",
+    "amount_usd": 120.0,
+    "due_day_of_month": 18,
+    "kind": "fixed_bill",
+    "final_payment_date": null,
+    "payments_remaining": null
+  },
+  {
+    "name": "car_insurance",
+    "amount_usd": 180.0,
+    "due_day_of_month": 20,
+    "kind": "fixed_bill",
+    "final_payment_date": null,
+    "payments_remaining": null
+  },
+  {
+    "name": "renters_insurance",
+    "amount_usd": 15.0,
+    "due_day_of_month": 25,
+    "kind": "fixed_bill",
+    "final_payment_date": null,
+    "payments_remaining": null
+  },
+  {
+    "name": "solidcore",
+    "amount_usd": 258.0,
+    "due_day_of_month": 3,
+    "kind": "subscription",
+    "final_payment_date": null,
+    "payments_remaining": null
+  },
+  {
+    "name": "spotify",
+    "amount_usd": 6.99,
+    "due_day_of_month": 7,
+    "kind": "subscription",
+    "final_payment_date": null,
+    "payments_remaining": null
+  },
+  {
+    "name": "applecare",
+    "amount_usd": 20.0,
+    "due_day_of_month": 14,
+    "kind": "subscription",
+    "final_payment_date": null,
+    "payments_remaining": null
+  },
+  {
+    "name": "icloud",
+    "amount_usd": 2.99,
+    "due_day_of_month": 21,
+    "kind": "subscription",
+    "final_payment_date": null,
+    "payments_remaining": null
+  },
+  {
+    "name": "streaming",
+    "amount_usd": 15.49,
+    "due_day_of_month": 27,
+    "kind": "subscription",
+    "final_payment_date": null,
+    "payments_remaining": null
+  }
+]

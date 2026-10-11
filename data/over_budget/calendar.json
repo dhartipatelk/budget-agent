@@ -1,0 +1,16 @@
+[
+  {
+    "start_date": "2026-12-18",
+    "end_date": "2026-12-20",
+    "title": "Sam and Jordan's wedding (Denver)",
+    "known_cost_usd": 1350.0,
+    "known_cost_note": "flight $520 and hotel $830, due before the trip"
+  },
+  {
+    "start_date": "2026-12-24",
+    "end_date": "2026-12-26",
+    "title": "Holidays at Mom's",
+    "known_cost_usd": null,
+    "known_cost_note": null
+  }
+]
