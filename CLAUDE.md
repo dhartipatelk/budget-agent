@@ -18,8 +18,31 @@ Due: Monday Oct 12, 2026. Solo, 20% of the course grade. Graded on: whether it i
 Done so far:
 
 - Step 1: plan and file structure agreed (Oct 11, 2026). Decisions recorded below.
+- Step 2 PLAN agreed (Oct 11, 2026). See "Step 2 plan" below. `generate_data.py` is NOT written yet.
 
-Not done yet: build steps 2 to 8. Next is step 2, the data generator.
+Not done yet: build steps 2 to 8.
+
+Next session starts here: write `generate_data.py` exactly as in "Step 2 plan" below, run it, then show me a sample of each file so I can read the output before committing.
+
+### Step 2 plan (agreed, not yet written)
+
+- Fixed seed: `random.seed(42)`. Never uses the real date.
+- One fictional person ("Maya") in all four scenarios; each scenario is a different "today" with 12 months of history before it. Each folder is self-contained with all 7 files.
+- Income: $4,200/month, paid $2,100 on the 1st and $2,100 on the 15th.
+- Fixed bills (`fixed_bill`): rent $1,450, car payment $320, car insurance $145, phone $65, internet $60 (total $2,040).
+- Subscriptions (`subscription`): streaming $16, music $11, gym $40 (total $67).
+- Typical flexible spend (with about ±10% random noise): groceries ~$380, transport (gas) ~$140, eating out ~$220, shopping ~$150, entertainment ~$80.
+- Goals: emergency fund ($6,000 target, ~$3,200 saved, $400/month); Roth IRA ($200/month).
+- Priorities (user's own words): "Emergency fund comes first." "I'd rather keep seeing friends than invest more right now." "I try to keep eating out under $350 a month."
+
+| Folder | Today | What is different | What it should force |
+|---|---|---|---|
+| `quiet/` | 2026-07-02 | Nothing; about $500 slack | Few tool calls, short answer |
+| `birthday/` | 2026-10-03 | Calendar: "My birthday" Oct 18. Last October's history has a $260 dinner and $180 shopping | Model looks back at last year and sets money aside |
+| `over_budget/` | 2026-12-02 | Friend's wedding in Denver (flight $380 + hotel $420 listed on the event) plus holiday gifts (~$300 last December); about $575 over | Model must cut and name the cost |
+| `drift/` | 2026-08-03 | Eating out rises 5%/month, ~$180 to ~$310; never passes $350 | Model notices the trend by comparing averages |
+
+Files per folder: `scenario.json` (today), `balance.json`, `recurring.json`, `transactions.json` (~300 rows: date, category, amount, description), `calendar.json`, `goals.json`, `priorities.json`. All flat records, units and dates in field names. No scenario labels or hints in any file.
 
 Decisions made along the way:
 
@@ -36,6 +59,10 @@ Decisions made along the way:
 11. **The scenario folder is bound by the code, never a model argument.** Tools receive the data folder from my code; the model never sees or chooses it.
 12. **Allocation checks live in `checks.py`**, a separate small file, because there are four checks (see "The final answer and the math check").
 13. **Recurring items have a `kind` field: `fixed_bill` or `subscription`.** Only `fixed_bill` items (rent, car payment, insurance) must appear at their full amount. Cancelling a subscription is a legitimate tradeoff, so it is not flagged.
+14. **Purchase verdicts are yes / tight / no**, with "essentials" defined (see "The final answer and the math check"). "No" depends on essentials and stated priorities, not arithmetic alone, so it stays a real judgment that an if-statement could not make.
+15. **A $350 eating-out limit is in the priorities.** The drift scenario "never breaches a limit," so a limit must exist for drift to mean anything.
+16. **A transport (gas) category exists in transactions**, so the "transport needed for work" essential has data behind it.
+17. **The wedding event lists its known costs; the birthday does not.** Booked prices are facts. For the birthday, the model has to dig through last year's history, so the two paths differ.
 
 Open questions: (anything I still need to ask my professor)
 
