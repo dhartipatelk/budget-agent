@@ -21,6 +21,7 @@ import anthropic
 from dotenv import load_dotenv
 
 from checks import check_scenario, extract_allocation
+from narrate import narrate
 from prompts import build_system_prompt
 from tools import run_tool
 
@@ -142,7 +143,7 @@ def run_agent(scenario, question, model, log_dir=LOG_DIR):
             yield {"type": "action", "step": step, "thought": thought, "tool": reply["tool"], "args": reply["args"]}
             feedback = run_tool(data_dir, reply["tool"], reply["args"])
             entry.update(tool=reply["tool"], args=reply["args"], result=feedback)
-            yield {"type": "result", "step": step, "result": feedback}
+            yield {"type": "result", "step": step, "result": feedback, "tool": reply["tool"], "args": reply["args"]}
         else:  # a garbled reply still counts as a step, so the cap always applies
             entry["problem"] = reply["reason"]
             yield {"type": "bad_reply", "step": step, "message": reply["reason"]}
@@ -174,6 +175,7 @@ def show(event):
     elif kind == "result":
         text = json.dumps(event["result"])
         print(f"[step {step}] RESULT:  {text[:SHOW_RESULT_CHARS]}{' ...' if len(text) > SHOW_RESULT_CHARS else ''}")
+        print(f"[step {step}] IN PLAIN ENGLISH: {narrate(event['tool'], event['args'], event['result'])}")
     elif kind == "final":
         print(f"\n[step {step}] FINAL ANSWER:\n{event['text']}")
     elif kind == "checks":

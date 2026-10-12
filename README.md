@@ -184,6 +184,7 @@ I wrote the requirements and rules in `CLAUDE.md` first (what counts as an agent
 | Path | What it is |
 |---|---|
 | `agent.py` | the loop (main file) |
+| `narrate.py` | turns each tool result into a plain-English line for the live demo (display only) |
 | `tools.py` | the nine fact-only tools |
 | `prompts.py` | the system prompt |
 | `checks.py` | the five checks (flag only) |
