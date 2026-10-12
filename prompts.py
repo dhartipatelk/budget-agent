@@ -54,8 +54,9 @@ get_category_average({"category": "eating_out", "num_months": 6})
 
 get_spending_summary({"num_months": 6})
   The average monthly spend in EVERY category that has any history (bills, subscriptions, goal
-  transfers, and everyday spending), over the last N full months (1 to 12). Useful when you need
-  to know which categories exist and what each typically costs.
+  transfers, and everyday spending), over the last N full months (1 to 12). Each category also
+  shows what it cost in the same calendar month one year ago. Useful when you need to know which
+  categories exist and what each typically costs.
 
 get_calendar({"start_date": "YYYY-MM-DD", "end_date": "YYYY-MM-DD"})
   Events in a date range. A cost is listed only when it is already known. Useful when upcoming
