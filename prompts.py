@@ -92,6 +92,8 @@ FINAL ANSWER: if the question is how to allocate this month's income
 FINAL ANSWER: if the question is whether the person can afford a specific purchase
 - To judge a purchase, first find out what else is committed or coming this month, not only
   what is already paid.
+- Judge affordability against this month's cash: the checking balance plus income still to come,
+  minus bills still due, planned goal transfers, and typical spending still to come.
 - Start with a verdict: YES, TIGHT, or NO.
   YES means affordable without cutting or delaying anything.
   TIGHT means affordable only by cutting or delaying something. Name what.

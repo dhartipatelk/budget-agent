@@ -1,11 +1,11 @@
 """
-run_tests.py: runs the six final questions and saves one log per run in logs/final/.
+run_tests.py: runs the ten final questions and saves one log per run in logs/final/.
 
 Why it exists: the logs are my evidence that the path varies (a quiet month should call
 few tools, a crunch month many). The summary table at the end puts the tool sequences
-side by side. Every run is a paid API call, so the six runs are listed here, in one place.
+side by side. Every run is a paid API call, so the ten runs are listed here, in one place.
 
-Run:  venv/bin/python3 run_tests.py         (all six)
+Run:  venv/bin/python3 run_tests.py         (all ten)
       venv/bin/python3 run_tests.py 3 5     (only runs 3 and 5)
 """
 
@@ -23,6 +23,10 @@ RUNS = [
     ("drift", ALLOCATION),
     ("quiet", "Can I afford a $400 weekend trip with friends this month?"),
     ("over_budget", "Can I afford a $300 night out with friends this month?"),
+    ("quiet", "Can I afford a $25 lunch with a friend this month?"),    # small: should need little lookup
+    ("quiet", "Can I afford a $2,500 laptop this month?"),              # large: should need more
+    ("over_budget", "Can I afford a $2,500 laptop this month?"),        # same item as run 8, different month
+    ("over_budget", "Can I afford a $6,000 international vacation this month?"),  # far beyond this month's cash
 ]
 
 
