@@ -47,6 +47,21 @@ def _categories(data_dir):
     return sorted({t["category"] for t in _load(data_dir, "transactions")})
 
 
+def _parse_num_months(value):
+    """A whole number from 1 to 12, or None if the value is not one."""
+    try:
+        n = int(value)
+    except (TypeError, ValueError):
+        return None
+    return n if 1 <= n <= 12 else None
+
+
+def _last_full_months(data_dir, n):
+    """The n full months before this one, as 'YYYY-MM' (this month is excluded)."""
+    current = _month_number(_today(data_dir))
+    return [f"{m // 12}-{m % 12 + 1:02d}" for m in range(current - n, current)]
+
+
 # ---------- The tools ----------
 
 def get_balance(data_dir):
@@ -105,15 +120,11 @@ def get_category_average(data_dir, category, num_months):
     """Average monthly spend in one category over the last N FULL months (this month excluded)."""
     if category not in _categories(data_dir):
         return {"error": f"unknown category '{category}'", "valid_categories": _categories(data_dir)}
-    try:
-        n = int(num_months)
-    except (TypeError, ValueError):
-        return {"error": "num_months must be a whole number from 1 to 12"}
-    if not 1 <= n <= 12:
+    n = _parse_num_months(num_months)
+    if n is None:
         return {"error": "num_months must be a whole number from 1 to 12"}
 
-    current = _month_number(_today(data_dir))
-    months = [f"{m // 12}-{m % 12 + 1:02d}" for m in range(current - n, current)]
+    months = _last_full_months(data_dir, n)
     totals = {m: 0.0 for m in months}  # a month with no spending counts as $0
     for t in _load(data_dir, "transactions"):
         if t["category"] == category and t["date"][:7] in totals:
@@ -127,6 +138,23 @@ def get_category_average(data_dir, category, num_months):
         "lowest_month_usd": round(min(values), 2),
         "highest_month_usd": round(max(values), 2),
         "monthly_totals": [{"month": m, "total_usd": round(v, 2)} for m, v in totals.items()],
+    }
+
+
+def get_spending_summary(data_dir, num_months):
+    """Average monthly spend for EVERY category with history, over the last N FULL months."""
+    n = _parse_num_months(num_months)
+    if n is None:
+        return {"error": "num_months must be a whole number from 1 to 12"}
+
+    months = _last_full_months(data_dir, n)
+    totals = {category: 0.0 for category in _categories(data_dir)}  # no spending in the window counts as $0
+    for t in _load(data_dir, "transactions"):
+        if t["date"][:7] in months:
+            totals[t["category"]] += t["amount_usd"]
+    return {
+        "num_months": n, "first_month": months[0], "last_month": months[-1],
+        "categories": [{"category": c, "average_monthly_usd": round(v / n, 2)} for c, v in totals.items()],
     }
 
 
@@ -182,6 +210,7 @@ TOOLS = {
     "get_recurring_expenses": get_recurring_expenses,
     "get_transactions": get_transactions,
     "get_category_average": get_category_average,
+    "get_spending_summary": get_spending_summary,
     "get_calendar": get_calendar,
     "get_goals": get_goals,
     "get_priorities": get_priorities,
