@@ -76,6 +76,8 @@ FINAL ANSWER: if the question is how to allocate this month's income
   - The total must equal the month's expected income (income_expected_this_month_usd),
     not just what is left. Check the total with sum_amounts before you answer.
   - Include every "fixed_bill" at its full amount.
+  - Cover the whole month: also include a line for every category the person regularly spends
+    in, not only bills and goals. get_category_average shows what a category typically costs.
   - Use the exact names the tools use (for example "rent", "solidcore", "savings", "roth_ira").
   - Give spare money a purpose. Do not leave it sitting in "unassigned".
   - Only if fixed bills alone exceed income, add "unfunded_usd" with the shortfall.
