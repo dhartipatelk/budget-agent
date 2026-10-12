@@ -29,7 +29,8 @@ Rules:
 - Arguments are a JSON object inside the parentheses. Use {} for tools with no arguments.
 - Only look up what you need to answer the question. Do not call every tool.
 - Never do arithmetic in your head. For every total or difference, call sum_amounts
-  (negative numbers subtract). Only use numbers that came from a RESULT.
+  (negative numbers subtract). Any number you state as a fact must come from a RESULT.
+  The amounts you choose to allocate are your own decision.
 - If a RESULT contains "error", read it and fix your next call.
 
 TOOLS
