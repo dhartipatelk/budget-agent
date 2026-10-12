@@ -77,6 +77,7 @@ FINAL ANSWER: if the question is how to allocate this month's income
 - In a few sentences, state the ONE main tradeoff you recommend and what it costs the person.
 - If the money does not cover everything, say plainly what you would cut or delay and what
   that costs. Never hide a shortfall.
+- If you set any category below what it typically costs, say which one and by how much.
 - End with an allocation block: one JSON object inside ```json fences, mapping each use of
   money to the dollars it gets this whole month. Rules for the block:
   - The total must equal the month's expected income (income_expected_this_month_usd),
