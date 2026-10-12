@@ -48,8 +48,9 @@ def check_allocation(allocation, income_usd, fixed_bills):
     # Check 1: the sum. If an unfunded line is allowed, its amount is subtracted first.
     counted = spending_total - unfunded if (unfunded is not None and unfunded_allowed) else spending_total
     if abs(counted - income_usd) > INCOME_TOLERANCE_USD:
+        gap = counted - income_usd
         flags.append(f"FLAG sum: allocation counts as ${counted:,.2f} but expected income is "
-                     f"${income_usd:,.2f} (off by ${counted - income_usd:+,.2f})")
+                     f"${income_usd:,.2f} (off by {'+' if gap > 0 else '-'}${abs(gap):,.2f})")
 
     # Check 2: every fixed bill is present, at its real amount.
     for name, real in fixed_bills.items():
