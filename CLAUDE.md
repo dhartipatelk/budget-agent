@@ -21,10 +21,11 @@ Done so far:
 - Step 2: `generate_data.py` written and run (Oct 11, 2026). Verified: identical output on re-run, no scenario labels in the data, numbers match the plan. Fixed after review: `gas` renamed `transport`, wedding note, goal transfer names, slack and decision #21 corrected to match the data.
 
 - Step 3: `tools.py` written (Oct 11, 2026). I tested every tool by hand in the terminal and checked answers against the JSON files: `get_balance`, `get_recurring_expenses` (totals 3374 / 303.47 / 1277.47), `get_transactions` (found the $260 birthday dinner; Oct 2025 eating out $547.28), `get_category_average` (drift 12-month $290.48 vs 3-month $356.21), `get_goals`, empty cases (no events, empty sum), and 5 bad inputs (wrong capital letter, US date, num_months 0, text instead of number, the forbidden `is_affordable`). All passed; all bad inputs returned an error instead of crashing.
+- Step 4: built in four pieces (Oct 12, 2026): 4a `.gitignore` + `.env.example`, 4b `prompts.py`, 4c `checks.py` (tested by hand with fake bad allocations), 4d `agent.py`. `agent.py` was tested OFFLINE with a fake model that follows a script (no API call, no cost): steps run in order, a garbled reply counts as a step, a fake `RESULT:` line after an ACTION is ignored, the scenario name is not in the system prompt (today's date is), a bad allocation is flagged and not fixed, a model that never finishes stops at exactly 25 calls, a purchase answer gives no false alarm, a cut-off reply is flagged. NOT yet tested: real API calls, real response objects, and the real 401/404/429 error paths. Those wait for step 5. Small fixes found while testing: check-header wording, `$-6,300` shown as `-$6,300`, log names to the millisecond.
 
-Not done yet: build steps 4 to 8.
+Not done yet: build steps 5 to 8.
 
-Next session starts here: step 4, the loop (`agent.py`, `prompts.py`). Give the plan first. Verify the model name on docs.claude.com before putting it in `.env`.
+Next session starts here: step 5, ONE cheap question end to end on the quiet scenario, then read the trace together. Run it with the venv Python: `venv/bin/python3 agent.py quiet "How should I allocate this month's income?"`. Watch for: whether the reply format is followed, whether the model finds the allocation rules, `max_tokens` cut-offs, and any capital-letter name mismatches ("Rent" vs "rent"). Also verify the model name on docs.claude.com.
 
 ### Step 2 plan (built; numbers below match the generated data)
 
@@ -88,6 +89,11 @@ Decisions made along the way:
 36. **How `unfunded_usd` is counted in the sum check (my reading of check 3, please confirm).** The sum check adds every allocation line EXCEPT `unfunded_usd`, then subtracts `unfunded_usd` only when it is allowed (fixed bills alone exceed income). Example: income 3000, bills 3200, allocation `{rent 2400, loans 800, unfunded_usd 200}` gives 3200 - 200 = 3000, so it passes. If `unfunded_usd` appears when it is NOT allowed, only check 3 flags it (the sum check ignores the line), so one mistake produces one flag, not two.
 37. **Check 2 matches names exactly** (`rent`, not `Rent`), as decided earlier, so a capitalised name is flagged as missing. It is a visible failure, and the fix would go in `prompts.py`. A fixed bill that is HIGHER than its real amount is not flagged by check 2; the sum check catches it if it throws the total off.
 38. **Known limits of `checks.py`, for the second reviewer:** (a) a negative amount in the allocation is not flagged, so it could be used to make a sum come out right; (b) when `unfunded_usd` is allowed, the code does not verify it equals the real shortfall; (c) `extract_allocation` reads the LAST ```json block in the answer.
+39. **Thinking is left at the model's default for step 5.** Haiku 5.5 thinks by default, and thinking tokens count against `MAX_TOKENS = 2000`, so a long think could cut the visible answer off. The loop prints a WARNING and flags the final answer if the reply is cut off. If that happens in the first trace: raise `MAX_TOKENS` or lower the effort setting, and say so in the README. Haiku 5.5 also rejects sampling settings such as `temperature`, so none are set. (Source: the Claude API reference; confirm on docs.claude.com.)
+40. **Assistant replies are added to the conversation exactly as received** (including any thinking blocks), and the code reads text only from the text blocks. Editing earlier turns can invalidate thinking blocks.
+41. **A garbled reply counts as a step**, and the model is told what was wrong, so the step cap always applies. API errors, refusals, and step-cap runs are still written to the log (only Ctrl-C loses a log).
+42. **Run logs:** one JSON file per run in `logs/scratch/` (gitignored): question, scenario name (metadata only, never sent to the model), each step's reply / tool / arguments / result, final answer, allocation, flags, step count, tokens, how it ended. The file name uses the real clock to the millisecond, for naming only.
+43. **Run `agent.py` with the venv Python** (`venv/bin/python3 agent.py ...` or `source venv/bin/activate` first). The system `python3` does not have the `anthropic` package. Cost note: the API reference lists Haiku 5.5 at $0.10 input / $0.50 output per 1M tokens (prompts up to 100K tokens); confirm on the pricing page.
 
 Open questions: (anything I still need to ask my professor)
 
@@ -104,6 +110,7 @@ Keep this list current so a fresh session knows what each file is for. (Fill in 
 - `.env.example`: template with the two setting names and a FAKE key. Copy it to `.env` and fill in the real key there.
 - `prompts.py`: the system prompt (reply format, the 8 tool descriptions with when each is useful, the answer formats). `build_system_prompt(today)` fills in the date.
 - `checks.py`: the four allocation checks (sum, fixed bills, unfunded, unassigned). Flags only; never fixes. Also `extract_allocation(text)` (pulls the ```json block out of the final answer) and `check_scenario(data_dir, allocation)` (loads the real income and fixed bills, then runs the checks).
+- `agent.py`: the loop (main file). `python3 agent.py <scenario> "<question>"` (use the venv Python). `run_agent(...)` is a generator that yields each step; `show(...)` prints them; one JSON log per run in `logs/scratch/`. Constants at the top: `MAX_STEPS = 25`, `MAX_TOKENS = 2000`, `MAX_RETRIES = 3`.
 - `requirements.txt`: Python packages (`anthropic`, `python-dotenv`, and their dependencies). No frameworks.
 - `generate_data.py`: builds the synthetic data (fixed seed 42). Run `python3 generate_data.py`.
 - `data/<scenario>/`: generated JSON for `quiet`, `birthday`, `over_budget`, `drift` (7 files each). Do not edit by hand; change the generator and re-run.
