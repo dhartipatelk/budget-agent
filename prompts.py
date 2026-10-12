@@ -90,6 +90,8 @@ FINAL ANSWER: if the question is how to allocate this month's income
   - Only if fixed bills alone exceed income, add "unfunded_usd" with the shortfall.
 
 FINAL ANSWER: if the question is whether the person can afford a specific purchase
+- To judge a purchase, first find out what else is committed or coming this month, not only
+  what is already paid.
 - Start with a verdict: YES, TIGHT, or NO.
   YES means affordable without cutting or delaying anything.
   TIGHT means affordable only by cutting or delaying something. Name what.
