@@ -1,5 +1,5 @@
 """
-checks.py: the four checks my CODE runs on the model's allocation after it answers.
+checks.py: the five checks my CODE runs on the model's allocation after it answers.
 
 Why it exists: a model can write a tidy allocation that does not actually work
 (it adds to the wrong total, or quietly shrinks the rent). These checks catch that.
@@ -12,11 +12,13 @@ Each check returns a plain-English flag. An empty list means every check passed.
 import json
 import re
 
-from tools import get_balance, get_recurring_expenses
+from tools import get_balance, get_recurring_expenses, get_spending_summary
 
 INCOME_TOLERANCE_USD = 1.00   # check 1: allowed rounding gap
 BILL_TOLERANCE_USD = 0.01     # check 2: allowed gap for a fixed bill (cents)
 UNASSIGNED_LIMIT = 0.10       # check 4: unassigned may be at most 10% of income
+LAST_YEAR_FRACTION = 0.5      # check 5: flag a category below this share of the same month last year...
+LAST_YEAR_GAP_USD = 100.00    # ...when the gap is also at least this much (both arbitrary; see CLAUDE.md)
 
 
 def extract_allocation(final_text):
@@ -38,8 +40,10 @@ def extract_allocation(final_text):
     return data, None
 
 
-def check_allocation(allocation, income_usd, fixed_bills):
-    """Run the four checks. `fixed_bills` maps each fixed bill's name to its real monthly amount."""
+def check_allocation(allocation, income_usd, fixed_bills, last_year_usd=None):
+    """Run the checks. `fixed_bills` maps each fixed bill's name to its real monthly amount.
+    `last_year_usd` maps a category to what it cost in the same month last year (check 5 is
+    skipped if it is not given)."""
     flags = []
     unfunded = allocation.get("unfunded_usd")
     spending_total = sum(v for k, v in allocation.items() if k != "unfunded_usd")
@@ -69,6 +73,15 @@ def check_allocation(allocation, income_usd, fixed_bills):
     if unassigned > UNASSIGNED_LIMIT * income_usd:
         flags.append(f"FLAG unassigned: ${unassigned:,.2f} is {unassigned / income_usd:.1%} of income "
                      f"(limit {UNASSIGNED_LIMIT:.0%})")
+
+    # Check 5: a category far below what the same month cost last year (fixed bills are check 2's job).
+    for name, last in (last_year_usd or {}).items():
+        if name in fixed_bills:
+            continue
+        allocated = allocation.get(name, 0)
+        if allocated < LAST_YEAR_FRACTION * last and last - allocated >= LAST_YEAR_GAP_USD:
+            now = f"${allocated:,.2f}" if name in allocation else "missing"
+            flags.append(f"FLAG below last year: '{name}' is {now}; the same month last year it cost ${last:,.2f}")
     return flags
 
 
@@ -77,4 +90,7 @@ def check_scenario(data_dir, allocation):
     income = get_balance(data_dir)["income_expected_this_month_usd"]
     bills = {item["name"]: item["amount_usd"]
              for item in get_recurring_expenses(data_dir)["items"] if item["kind"] == "fixed_bill"}
-    return check_allocation(allocation, income, bills)
+    last_year = {row["category"]: row["same_month_last_year_usd"]
+                 for row in get_spending_summary(data_dir, 1)["categories"]
+                 if row["same_month_last_year_usd"] is not None}
+    return check_allocation(allocation, income, bills, last_year)
