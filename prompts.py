@@ -52,6 +52,11 @@ get_category_average({"category": "eating_out", "num_months": 6})
   Average monthly spend in one category over the last N full months (1 to 12), plus each month's
   total, so you can see whether spending is changing. Useful for what a category typically costs.
 
+get_spending_summary({"num_months": 6})
+  The average monthly spend in EVERY category that has any history (bills, subscriptions, goal
+  transfers, and everyday spending), over the last N full months (1 to 12). Useful when you need
+  to know which categories exist and what each typically costs.
+
 get_calendar({"start_date": "YYYY-MM-DD", "end_date": "YYYY-MM-DD"})
   Events in a date range. A cost is listed only when it is already known. Useful when upcoming
   plans could compete for money.
@@ -77,7 +82,7 @@ FINAL ANSWER: if the question is how to allocate this month's income
     not just what is left. Check the total with sum_amounts before you answer.
   - Include every "fixed_bill" at its full amount.
   - Cover the whole month: also include a line for every category the person regularly spends
-    in, not only bills and goals. get_category_average shows what a category typically costs.
+    in, not only bills and goals. get_spending_summary lists every category and what it typically costs.
   - Use the exact names the tools use (for example "rent", "solidcore", "savings", "roth_ira").
   - Give spare money a purpose. Do not leave it sitting in "unassigned".
   - Only if fixed bills alone exceed income, add "unfunded_usd" with the shortfall.
