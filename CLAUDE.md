@@ -212,6 +212,7 @@ Write a plain if-statement version in `baseline.py` (fixed bills first, then a s
 - Before every push, run `git ls-files` and confirm `.env` is not listed.
 - If a key is ever committed, stop and tell me. Deleting the file does not fix it, because it stays in git history. The key must be rotated.
 - Make small, meaningful commits, one per step. Never one big "upload" commit. Use clear messages.
+- **Tell me every time it is time to commit and push**, with the exact commands. Commit when one small piece works and I have read it (a file, a fix, a CLAUDE.md update). Review fixes get their OWN commit, separate from the thing they fix, so the history shows "built, reviewed, fixed." Push right after every commit, after checking `git ls-files` shows no `.env`. (My professor wants small, steady commits, not everything at once.)
 - No real financial data anywhere in the repo.
 - Never read, open, or reference any file outside this project folder. If a task seems to need a file elsewhere, ask me first.
 
