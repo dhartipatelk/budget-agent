@@ -13,7 +13,7 @@ All data is synthetic. Never use, ask for, or generate real bank data. The READM
 
 ## Project status (this is a LIVE file)
 
-Due: Monday Oct 12, 2026. Solo, 20% of the course grade. Graded on: whether it is a real agent (see the hard requirements below), the repo (README, structure, real commit history, no secrets), a five-minute presentation with a live demo, and whether I can explain every file and how I verified it. No UI is required for this assignment.
+Due: Monday Oct 12, 2026 at 5:00 PM (firm, no extension). Solo, 20% of the course grade. Graded on: whether it is a real agent (see the hard requirements below), the repo (README, structure, real commit history, no secrets), a five-minute presentation with a live demo, and whether I can explain every file and how I verified it. No UI is required for this assignment.
 
 Done so far:
 
@@ -25,9 +25,11 @@ Done so far:
 
 Not done yet: build steps 5 to 8.
 
-Step 5 status: first real run done on `quiet` (8 steps, 7 tool calls, about $0.004, no errors, format followed). It passed all checks but the plan was unrealistic (see decision 44). Prompt fix made; NOT yet re-run.
+Step 5 status: DONE, two real runs on `quiet`, both saved in `logs/` (`step5_quiet_before_prompt_fix.json`, `step5_quiet_after_prompt_fix.json`), about $0.004 each, no errors, format followed. Run 1 passed all checks but the plan was unrealistic (decision 44). Run 2 (after the prompt fix) improved: eating out at the real average ($266.83), transport added, final total computed through `sum_amounts` (exactly $8,700). Still wrong in run 2: (1) shopping ($522), entertainment ($77) and health ($57), about $656/month, still have no line, because NO TOOL LISTS THE CATEGORIES (the model only knew groceries and eating out from the priorities and transport from the prompt's "essentials" line); (2) the answer says bills and spending "come to $6,892.90" but that figure includes the $2,292 of savings and Roth; (3) it says the $20,000 goal is reached "well before December" but at this pace it is reached IN December; (4) it did some arithmetic in its head again ($6,892.90, $1,807.10 never came from a tool). The checks passed anyway, because the four checks cannot see missing categories.
 
-Next session starts here: re-run `quiet` with the fixed prompt and compare with the saved "before" trace; then test the real 401 and 404 messages (bad key and bad model name cost nothing); then step 6 (baseline). Original step 5 notes: Run it with the venv Python: `venv/bin/python3 agent.py quiet "How should I allocate this month's income?"`. Watch for: whether the reply format is followed, whether the model finds the allocation rules, `max_tokens` cut-offs, and any capital-letter name mismatches ("Rent" vs "rent"). Also verify the model name on docs.claude.com.
+DECISION MADE (by me, overriding Claude's "skip it" recommendation because of the deadline): the 9th tool `get_spending_summary(num_months)` is ADDED (see decision 45). It is hand-tested by me but NOT yet re-run on the real API.
+
+Next session starts here (DEADLINE Oct 12, 5 PM, so this order): (0) re-run `quiet` with the new tool and compare with the two saved traces (does the allocation now include shopping, entertainment and health?); (1) step 6, `baseline.py`; (2) step 7, run `birthday`, `over_budget`, `drift` (allocation question) plus a purchase question on `quiet` and `over_budget`, and save the logs in `logs/`; (3) step 8, README (include the missing-categories finding); (4) if time is left, test the real 401 and 404 messages (a bad key and a bad model name cost nothing; `load_dotenv` does not override variables already set, so `ANTHROPIC_API_KEY=bad venv/bin/python3 agent.py quiet "hi"` tests 401 and `MODEL_NAME=nope venv/bin/python3 agent.py quiet "hi"` tests 404); (5) practise the 5-minute demo. Not yet run on the real API: `birthday`, `over_budget`, `drift`, and any purchase question. Original step 5 notes: Run it with the venv Python: `venv/bin/python3 agent.py quiet "How should I allocate this month's income?"`. Watch for: whether the reply format is followed, whether the model finds the allocation rules, `max_tokens` cut-offs, and any capital-letter name mismatches ("Rent" vs "rent"). Also verify the model name on docs.claude.com.
 
 ### Step 2 plan (built; numbers below match the generated data)
 
@@ -97,8 +99,11 @@ Decisions made along the way:
 42. **Run logs:** one JSON file per run in `logs/scratch/` (gitignored): question, scenario name (metadata only, never sent to the model), each step's reply / tool / arguments / result, final answer, allocation, flags, step count, tokens, how it ended. The file name uses the real clock to the millisecond, for naming only.
 43. **Run `agent.py` with the venv Python** (`venv/bin/python3 agent.py ...` or `source venv/bin/activate` first). The system `python3` does not have the `anthropic` package. Cost note: the API reference lists Haiku 5.5 at $0.10 input / $0.50 output per 1M tokens (prompts up to 100K tokens); confirm on the pricing page.
 44. **Prompt fix after the first real run (Oct 12, 2026):** the first `quiet` run passed all four checks, but the plan was unrealistic. About $810/month of normal spending had no line (transport $153, shopping $522, entertainment $77, health $57, 6-month averages), eating out was set to the $400 cap instead of the real ~$267, savings absorbed the gap ($2,692.53 vs planned $1,667), "experiences $800" was invented, and the answer said savings would reach $12,695 "by year-end" (that is only the balance after this month's transfer). The four checks cannot see missing categories, which is a limit of the checks, not a bug. Cause: the model looked up only groceries, and the prompt never said the allocation must cover everything the person spends on. Fix: one general rule in the allocation block ("Cover the whole month: also include a line for every category the person regularly spends in... get_category_average shows what a category typically costs."). It applies to every scenario and hints at no answer. The "before" trace is saved as `logs/step5_quiet_before_prompt_fix.json`. NOT fixed by this rule: the misleading "by year-end" claim and the model doing some arithmetic in its head; watch for both in later traces.
+45. **9th tool `get_spending_summary(num_months)` added** (my decision). Facts only: for every category with transaction history it returns the average monthly spend over the last N FULL months (this month excluded), alphabetical, with months that have no spending counted as $0. It includes bills, subscriptions and goal transfers (`rent`, `savings`, `roth_ira`) as well as everyday spending, so the model must sort out which is which and avoid double counting; that is judgment, not the tool's job. Same `num_months` rule and error message as `get_category_average`. To make that identical by construction, the two shared pieces were moved into helpers (`_parse_num_months`, `_last_full_months`) and `get_category_average` now uses them; I checked it returns identical results on 979 cases before and after. In `prompts.py` I added the tool's description and ALSO changed one phrase in the "Cover the whole month" rule so it points at the new tool ("get_spending_summary lists every category and what it typically costs") instead of `get_category_average`; revert that phrase if it reads as too much of a hint.
 
 Open questions: (anything I still need to ask my professor)
+
+- (none right now. The deadline is firm: Oct 12, 5:00 PM.)
 
 ### End-of-session rule
 
@@ -117,7 +122,7 @@ Keep this list current so a fresh session knows what each file is for. (Fill in 
 - `requirements.txt`: Python packages (`anthropic`, `python-dotenv`, and their dependencies). No frameworks.
 - `generate_data.py`: builds the synthetic data (fixed seed 42). Run `python3 generate_data.py`.
 - `data/<scenario>/`: generated JSON for `quiet`, `birthday`, `over_budget`, `drift` (7 files each). Do not edit by hand; change the generator and re-run.
-- `tools.py`: the 8 fact-only tools plus `run_tool(data_dir, name, args)`, which looks a tool up by name and never crashes. Hand-test example: `python3 -c "from tools import run_tool as t; print(t('data/quiet', 'get_balance', {}))"`.
+- `tools.py`: the 9 fact-only tools plus `run_tool(data_dir, name, args)`, which looks a tool up by name and never crashes. Hand-test example: `python3 -c "from tools import run_tool as t; print(t('data/quiet', 'get_balance', {}))"`.
 
 ## Who I am and how to work with me
 
@@ -174,6 +179,7 @@ Each tool is a small function that reads the synthetic JSON files and returns sm
 - `get_recurring_expenses()`: rent, subscriptions, car payment, car insurance, etc, with due dates. Each item has `kind`: `fixed_bill` or `subscription`.
 - `get_transactions(category, start_date, end_date)`: what was actually spent, filtered.
 - `get_category_average(category, num_months)`: typical spend in a category over past months.
+- `get_spending_summary(num_months)`: average monthly spend for EVERY category with history (bills, subscriptions, goal transfers and everyday spending) over the last N full months, alphabetical, no judgment. Added after the first real runs showed the model could not discover categories (decisions 44 and 45).
 - `get_calendar(start_date, end_date)`: upcoming events such as birthdays and trips.
 - `get_goals()`: savings and investing goals, deadlines, and progress.
 - `get_priorities()`: the user's STATED priorities (for example "emergency fund first, social life over investing"). It returns what the user said, not a ranking of what to cut.
