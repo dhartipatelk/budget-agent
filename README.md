@@ -3,6 +3,8 @@
 A budgeting agent built from scratch in plain Python for **BUAN 6V99 (Agentic AI & Process Automation)**.
 Author: Dharti Patel. Due Monday, October 12, 2026.
 
+**The problem:** when a wedding, a birthday or the holidays compete with rent and savings, I lose track of what I can afford. This agent looks up a (fictional) person's bills, spending history, calendar, goals and stated priorities, then recommends one tradeoff and says why.
+
 ## What it does
 
 The agent helps one (fictional) person decide how to use her money when events compete for it. It answers two kinds of question with the same loop:
@@ -175,7 +177,7 @@ So the baseline does not match the agent in every month, which means the scenari
 
 ## How I used AI to build this
 
-I wrote the requirements and rules in `CLAUDE.md` first (what counts as an agent, tools return facts only, no framework, step cap, synthetic data, small commits). Then I built it with **Claude Code** (Claude), one step at a time: plan, data generator, tools, loop, runs, baseline, README. For each step it explained what it would do, I read the result, tested it by hand and committed. I made the design decisions (the fictional budget and priorities, adding the summary tool, defining "afford" as cash flow, the ladder questions, keeping the rubric out of the repo) and rejected recommendations when I disagreed. A second AI chat reviewed the work and found real problems (listed above). `CLAUDE.md` is the running log: it records 57 numbered decisions, including the mistakes and corrections.
+I wrote the requirements and rules in `CLAUDE.md` first (what counts as an agent, tools return facts only, no framework, step cap, synthetic data, small commits). Then I built it with **Claude Code** (Claude), one step at a time: plan, data generator, tools, loop, runs, baseline, README. For each step it explained what it would do, I read the result, tested it by hand and committed. I made the design decisions (the fictional budget and priorities, adding the summary tool, defining "afford" as cash flow, the ladder questions) and rejected recommendations when I disagreed. A second AI chat reviewed the work and found real problems (listed above). `CLAUDE.md` is the running log: it records 57 numbered decisions, including the mistakes and corrections.
 
 ## Where things are
 
