@@ -142,19 +142,32 @@ def get_category_average(data_dir, category, num_months):
 
 
 def get_spending_summary(data_dir, num_months):
-    """Average monthly spend for EVERY category with history, over the last N FULL months."""
+    """Average monthly spend for EVERY category with history, over the last N FULL months,
+    plus what each category cost in the same calendar month one year ago."""
     n = _parse_num_months(num_months)
     if n is None:
         return {"error": "num_months must be a whole number from 1 to 12"}
 
+    today = _today(data_dir)
     months = _last_full_months(data_dir, n)
+    year_ago = f"{today.year - 1}-{today.month:02d}"
+    transactions = _load(data_dir, "transactions")
+    reaches_back = bool(transactions) and min(t["date"][:7] for t in transactions) <= year_ago
     totals = {category: 0.0 for category in _categories(data_dir)}  # no spending in the window counts as $0
-    for t in _load(data_dir, "transactions"):
-        if t["date"][:7] in months:
+    year_ago_totals = dict(totals)
+    for t in transactions:
+        month = t["date"][:7]
+        if month in months:
             totals[t["category"]] += t["amount_usd"]
+        if month == year_ago:
+            year_ago_totals[t["category"]] += t["amount_usd"]
     return {
         "num_months": n, "first_month": months[0], "last_month": months[-1],
-        "categories": [{"category": c, "average_monthly_usd": round(v / n, 2)} for c, v in totals.items()],
+        "same_month_last_year": year_ago,
+        "categories": [{"category": c, "average_monthly_usd": round(v / n, 2),
+                        # None if the history does not reach back a full year
+                        "same_month_last_year_usd": round(year_ago_totals[c], 2) if reaches_back else None}
+                       for c, v in totals.items()],
     }
 
 
