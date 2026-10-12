@@ -78,6 +78,11 @@ Decisions made along the way:
 26. **`get_category_average` uses FULL months only** (the current month is excluded). Today is the 2nd or 3rd, so a 2-day month would drag the average down and mislead the model. It also returns each month's total so the model can see a trend for itself.
 27. **`get_transactions` shows at most 50 rows** (most recent), plus the full count and total, so one call cannot flood the model with ~470 rows (cost and confusion).
 28. **Bad input returns `{"error": ...}`, never a crash**, often with the valid options listed, so the model can correct itself and the loop keeps going.
+30. **The model writes one `THOUGHT:` line before each `ACTION:` or `FINAL:`.** The code still acts only on the ACTION/FINAL line. Why: in the live demo the audience sees WHY each tool was called, not just a list of calls. Costs a few tokens per step.
+31. **Stop sequence on `RESULT:`.** The API cuts the model off if it starts writing a fake tool result, so decision #3 is enforced in code, not only in the prompt.
+32. **Today's date goes in the system prompt** (from `scenario.json`), so the model can choose date ranges. The scenario NAME is never sent.
+33. **No hint about events or history in the prompt** (for example, nothing like "past spending shows what similar events cost"). We want to see whether the model finds last year's birthday on its own. If it does not, add a hint later and say so in the README.
+34. **The prompt states the sum rule, the full-fixed-bill rule, and the `unfunded_usd` rule, but NOT the 10% number.** Those rules are the task itself (agreed with the second reviewer). Instead of the number, it says "give spare money a purpose; do not leave it sitting in unassigned", so the quiet month is a real test of where the model puts ~$1,200 of slack. If the 10% check fires, that is an honest finding.
 29. **Known limits, for the second reviewer:** (a) a category with no history (for example `gifts` in `quiet`) returns "unknown category", not $0, so that a typo like `Groceries` cannot silently return $0; (b) `run_tool` catches argument errors (TypeError), which helps with model typos but could also hide a bug inside a tool.
 
 Open questions: (anything I still need to ask my professor)
@@ -91,7 +96,9 @@ When I say I am finished for the day, update this file before we stop: move fini
 Keep this list current so a fresh session knows what each file is for. (Fill in as files are created.)
 
 - `CLAUDE.md`: project instructions and live status (this file).
-- `.gitignore`: keeps `.env`, `venv/`, `__pycache__/` out of git.
+- `.gitignore`: keeps `.env`, `venv/`, `__pycache__/`, `logs/scratch/` out of git.
+- `.env.example`: template with the two setting names and a FAKE key. Copy it to `.env` and fill in the real key there.
+- `prompts.py`: the system prompt (reply format, the 8 tool descriptions with when each is useful, the answer formats). `build_system_prompt(today)` fills in the date.
 - `requirements.txt`: Python packages (`anthropic`, `python-dotenv`, and their dependencies). No frameworks.
 - `generate_data.py`: builds the synthetic data (fixed seed 42). Run `python3 generate_data.py`.
 - `data/<scenario>/`: generated JSON for `quiet`, `birthday`, `over_budget`, `drift` (7 files each). Do not edit by hand; change the generator and re-run.
