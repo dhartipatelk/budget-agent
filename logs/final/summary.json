@@ -1,0 +1,169 @@
+[
+  {
+    "run": 1,
+    "scenario": "quiet",
+    "kind": "allocation",
+    "outcome": "final",
+    "steps": 10,
+    "tokens_in": 41513,
+    "tokens_out": 2096,
+    "flags": 0,
+    "tools": [
+      "get_balance",
+      "get_recurring_expenses",
+      "get_spending_summary",
+      "get_goals",
+      "get_priorities",
+      "get_calendar",
+      "sum_amounts",
+      "sum_amounts",
+      "sum_amounts"
+    ],
+    "log": "/Users/dharti/Projects/budget-agent/logs/final/quiet_20261012_103103_171.json"
+  },
+  {
+    "run": 2,
+    "scenario": "birthday",
+    "kind": "allocation",
+    "outcome": "final",
+    "steps": 10,
+    "tokens_in": 41927,
+    "tokens_out": 2059,
+    "flags": 0,
+    "tools": [
+      "get_balance",
+      "get_recurring_expenses",
+      "get_spending_summary",
+      "get_goals",
+      "get_priorities",
+      "get_calendar",
+      "sum_amounts",
+      "sum_amounts",
+      "sum_amounts"
+    ],
+    "log": "/Users/dharti/Projects/budget-agent/logs/final/birthday_20261012_103132_605.json"
+  },
+  {
+    "run": 3,
+    "scenario": "over_budget",
+    "kind": "allocation",
+    "outcome": "final",
+    "steps": 9,
+    "tokens_in": 36798,
+    "tokens_out": 1978,
+    "flags": 2,
+    "tools": [
+      "get_balance",
+      "get_recurring_expenses",
+      "get_spending_summary",
+      "get_calendar",
+      "get_goals",
+      "get_priorities",
+      "sum_amounts",
+      "sum_amounts"
+    ],
+    "log": "/Users/dharti/Projects/budget-agent/logs/final/over_budget_20261012_103155_398.json"
+  },
+  {
+    "run": 4,
+    "scenario": "drift",
+    "kind": "allocation",
+    "outcome": "final",
+    "steps": 10,
+    "tokens_in": 41858,
+    "tokens_out": 2292,
+    "flags": 0,
+    "tools": [
+      "get_balance",
+      "get_recurring_expenses",
+      "get_spending_summary",
+      "get_goals",
+      "get_priorities",
+      "get_calendar",
+      "sum_amounts",
+      "sum_amounts",
+      "sum_amounts"
+    ],
+    "log": "/Users/dharti/Projects/budget-agent/logs/final/drift_20261012_103226_220.json"
+  },
+  {
+    "run": 5,
+    "scenario": "quiet",
+    "kind": "purchase",
+    "outcome": "final",
+    "steps": 9,
+    "tokens_in": 36533,
+    "tokens_out": 1421,
+    "flags": 0,
+    "tools": [
+      "get_balance",
+      "get_recurring_expenses",
+      "get_spending_summary",
+      "get_goals",
+      "get_priorities",
+      "get_calendar",
+      "sum_amounts",
+      "sum_amounts"
+    ],
+    "log": "/Users/dharti/Projects/budget-agent/logs/final/quiet_20261012_103244_432.json"
+  },
+  {
+    "run": 6,
+    "scenario": "over_budget",
+    "kind": "purchase",
+    "outcome": "final",
+    "steps": 9,
+    "tokens_in": 36795,
+    "tokens_out": 1631,
+    "flags": 0,
+    "tools": [
+      "get_balance",
+      "get_recurring_expenses",
+      "get_goals",
+      "get_spending_summary",
+      "get_calendar",
+      "get_priorities",
+      "sum_amounts",
+      "sum_amounts"
+    ],
+    "log": "/Users/dharti/Projects/budget-agent/logs/final/over_budget_20261012_103309_819.json"
+  },
+  {
+    "run": 7,
+    "scenario": "quiet",
+    "kind": "purchase",
+    "outcome": "final",
+    "steps": 6,
+    "tokens_in": 20638,
+    "tokens_out": 977,
+    "flags": 0,
+    "tools": [
+      "get_balance",
+      "get_recurring_expenses",
+      "get_spending_summary",
+      "get_goals",
+      "sum_amounts"
+    ],
+    "log": "/Users/dharti/Projects/budget-agent/logs/final/quiet_20261012_103321_408.json"
+  },
+  {
+    "run": 8,
+    "scenario": "quiet",
+    "kind": "purchase",
+    "outcome": "final",
+    "steps": 8,
+    "tokens_in": 30679,
+    "tokens_out": 1293,
+    "flags": 0,
+    "tools": [
+      "get_balance",
+      "get_recurring_expenses",
+      "get_spending_summary",
+      "get_goals",
+      "get_priorities",
+      "get_calendar",
+      "sum_amounts"
+    ],
+    "log": "/Users/dharti/Projects/budget-agent/logs/final/quiet_20261012_103338_306.json"
+  }
+]
