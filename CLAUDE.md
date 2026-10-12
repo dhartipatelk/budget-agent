@@ -20,9 +20,11 @@ Done so far:
 - Step 1: plan and file structure agreed (Oct 11, 2026). Decisions recorded below.
 - Step 2: `generate_data.py` written and run (Oct 11, 2026). Verified: identical output on re-run, no scenario labels in the data, numbers match the plan. Fixed after review: `gas` renamed `transport`, wedding note, goal transfer names, slack and decision #21 corrected to match the data.
 
-Not done yet: build steps 3 to 8.
+- Step 3: `tools.py` written (Oct 11, 2026). I tested every tool by hand in the terminal and checked answers against the JSON files: `get_balance`, `get_recurring_expenses` (totals 3374 / 303.47 / 1277.47), `get_transactions` (found the $260 birthday dinner; Oct 2025 eating out $547.28), `get_category_average` (drift 12-month $290.48 vs 3-month $356.21), `get_goals`, empty cases (no events, empty sum), and 5 bad inputs (wrong capital letter, US date, num_months 0, text instead of number, the forbidden `is_affordable`). All passed; all bad inputs returned an error instead of crashing.
 
-Next session starts here: step 3, the tools in `tools.py`. Give the plan first, then build and test each tool by hand.
+Not done yet: build steps 4 to 8.
+
+Next session starts here: step 4, the loop (`agent.py`, `prompts.py`). Give the plan first. Verify the model name on docs.claude.com before putting it in `.env`.
 
 ### Step 2 plan (built; numbers below match the generated data)
 
@@ -72,6 +74,11 @@ Decisions made along the way:
 23. **The wedding note says "due before the trip"**, not "paid this month." The flight and hotel are not in the transactions or balance, so "paid" would have contradicted the data.
 24. **Goal transfer categories renamed** from `savings_transfer` / `roth_ira_contribution` to `savings` / `roth_ira`, matching the goal names, to avoid a naming mismatch later.
 22. **Priorities are designed to conflict** (savings vs Roth vs experiences; Solidcore "if I can"). Priorities that never conflict give the model nothing to judge.
+25. **Tools do one-right-answer arithmetic** (income still expected, bill totals, amount still due, goal amount remaining, months left), so the model never adds. They never say "on track", "affordable", or "trending up": those are judgments.
+26. **`get_category_average` uses FULL months only** (the current month is excluded). Today is the 2nd or 3rd, so a 2-day month would drag the average down and mislead the model. It also returns each month's total so the model can see a trend for itself.
+27. **`get_transactions` shows at most 50 rows** (most recent), plus the full count and total, so one call cannot flood the model with ~470 rows (cost and confusion).
+28. **Bad input returns `{"error": ...}`, never a crash**, often with the valid options listed, so the model can correct itself and the loop keeps going.
+29. **Known limits, for the second reviewer:** (a) a category with no history (for example `gifts` in `quiet`) returns "unknown category", not $0, so that a typo like `Groceries` cannot silently return $0; (b) `run_tool` catches argument errors (TypeError), which helps with model typos but could also hide a bug inside a tool.
 
 Open questions: (anything I still need to ask my professor)
 
@@ -88,6 +95,7 @@ Keep this list current so a fresh session knows what each file is for. (Fill in 
 - `requirements.txt`: Python packages (`anthropic`, `python-dotenv`, and their dependencies). No frameworks.
 - `generate_data.py`: builds the synthetic data (fixed seed 42). Run `python3 generate_data.py`.
 - `data/<scenario>/`: generated JSON for `quiet`, `birthday`, `over_budget`, `drift` (7 files each). Do not edit by hand; change the generator and re-run.
+- `tools.py`: the 8 fact-only tools plus `run_tool(data_dir, name, args)`, which looks a tool up by name and never crashes. Hand-test example: `python3 -c "from tools import run_tool as t; print(t('data/quiet', 'get_balance', {}))"`.
 
 ## Who I am and how to work with me
 
