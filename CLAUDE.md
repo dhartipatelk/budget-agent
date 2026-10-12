@@ -85,6 +85,9 @@ Decisions made along the way:
 33. **No hint about events or history in the prompt** (for example, nothing like "past spending shows what similar events cost"). We want to see whether the model finds last year's birthday on its own. If it does not, add a hint later and say so in the README.
 34. **The prompt states the sum rule, the full-fixed-bill rule, and the `unfunded_usd` rule, but NOT the 10% number.** Those rules are the task itself (agreed with the second reviewer). Instead of the number, it says "give spare money a purpose; do not leave it sitting in unassigned", so the quiet month is a real test of where the model puts ~$1,200 of slack. If the 10% check fires, that is an honest finding.
 35. **Prompt fix after review: facts vs choices.** The prompt said "Only use numbers that came from a RESULT", which contradicts allocating (the model CHOOSES amounts like "eating_out: 250"; no tool returns them). Now: "Any number you state as a fact must come from a RESULT. The amounts you choose to allocate are your own decision." Caught by the second reviewer.
+36. **How `unfunded_usd` is counted in the sum check (my reading of check 3, please confirm).** The sum check adds every allocation line EXCEPT `unfunded_usd`, then subtracts `unfunded_usd` only when it is allowed (fixed bills alone exceed income). Example: income 3000, bills 3200, allocation `{rent 2400, loans 800, unfunded_usd 200}` gives 3200 - 200 = 3000, so it passes. If `unfunded_usd` appears when it is NOT allowed, only check 3 flags it (the sum check ignores the line), so one mistake produces one flag, not two.
+37. **Check 2 matches names exactly** (`rent`, not `Rent`), as decided earlier, so a capitalised name is flagged as missing. It is a visible failure, and the fix would go in `prompts.py`. A fixed bill that is HIGHER than its real amount is not flagged by check 2; the sum check catches it if it throws the total off.
+38. **Known limits of `checks.py`, for the second reviewer:** (a) a negative amount in the allocation is not flagged, so it could be used to make a sum come out right; (b) when `unfunded_usd` is allowed, the code does not verify it equals the real shortfall; (c) `extract_allocation` reads the LAST ```json block in the answer.
 
 Open questions: (anything I still need to ask my professor)
 
@@ -100,6 +103,7 @@ Keep this list current so a fresh session knows what each file is for. (Fill in 
 - `.gitignore`: keeps `.env`, `venv/`, `__pycache__/`, `logs/scratch/` out of git.
 - `.env.example`: template with the two setting names and a FAKE key. Copy it to `.env` and fill in the real key there.
 - `prompts.py`: the system prompt (reply format, the 8 tool descriptions with when each is useful, the answer formats). `build_system_prompt(today)` fills in the date.
+- `checks.py`: the four allocation checks (sum, fixed bills, unfunded, unassigned). Flags only; never fixes. Also `extract_allocation(text)` (pulls the ```json block out of the final answer) and `check_scenario(data_dir, allocation)` (loads the real income and fixed bills, then runs the checks).
 - `requirements.txt`: Python packages (`anthropic`, `python-dotenv`, and their dependencies). No frameworks.
 - `generate_data.py`: builds the synthetic data (fixed seed 42). Run `python3 generate_data.py`.
 - `data/<scenario>/`: generated JSON for `quiet`, `birthday`, `over_budget`, `drift` (7 files each). Do not edit by hand; change the generator and re-run.
