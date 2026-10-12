@@ -25,7 +25,9 @@ Done so far:
 
 Not done yet: build steps 5 to 8.
 
-Next session starts here: step 5, ONE cheap question end to end on the quiet scenario, then read the trace together. Run it with the venv Python: `venv/bin/python3 agent.py quiet "How should I allocate this month's income?"`. Watch for: whether the reply format is followed, whether the model finds the allocation rules, `max_tokens` cut-offs, and any capital-letter name mismatches ("Rent" vs "rent"). Also verify the model name on docs.claude.com.
+Step 5 status: first real run done on `quiet` (8 steps, 7 tool calls, about $0.004, no errors, format followed). It passed all checks but the plan was unrealistic (see decision 44). Prompt fix made; NOT yet re-run.
+
+Next session starts here: re-run `quiet` with the fixed prompt and compare with the saved "before" trace; then test the real 401 and 404 messages (bad key and bad model name cost nothing); then step 6 (baseline). Original step 5 notes: Run it with the venv Python: `venv/bin/python3 agent.py quiet "How should I allocate this month's income?"`. Watch for: whether the reply format is followed, whether the model finds the allocation rules, `max_tokens` cut-offs, and any capital-letter name mismatches ("Rent" vs "rent"). Also verify the model name on docs.claude.com.
 
 ### Step 2 plan (built; numbers below match the generated data)
 
@@ -94,6 +96,7 @@ Decisions made along the way:
 41. **A garbled reply counts as a step**, and the model is told what was wrong, so the step cap always applies. API errors, refusals, and step-cap runs are still written to the log (only Ctrl-C loses a log).
 42. **Run logs:** one JSON file per run in `logs/scratch/` (gitignored): question, scenario name (metadata only, never sent to the model), each step's reply / tool / arguments / result, final answer, allocation, flags, step count, tokens, how it ended. The file name uses the real clock to the millisecond, for naming only.
 43. **Run `agent.py` with the venv Python** (`venv/bin/python3 agent.py ...` or `source venv/bin/activate` first). The system `python3` does not have the `anthropic` package. Cost note: the API reference lists Haiku 5.5 at $0.10 input / $0.50 output per 1M tokens (prompts up to 100K tokens); confirm on the pricing page.
+44. **Prompt fix after the first real run (Oct 12, 2026):** the first `quiet` run passed all four checks, but the plan was unrealistic. About $810/month of normal spending had no line (transport $153, shopping $522, entertainment $77, health $57, 6-month averages), eating out was set to the $400 cap instead of the real ~$267, savings absorbed the gap ($2,692.53 vs planned $1,667), "experiences $800" was invented, and the answer said savings would reach $12,695 "by year-end" (that is only the balance after this month's transfer). The four checks cannot see missing categories, which is a limit of the checks, not a bug. Cause: the model looked up only groceries, and the prompt never said the allocation must cover everything the person spends on. Fix: one general rule in the allocation block ("Cover the whole month: also include a line for every category the person regularly spends in... get_category_average shows what a category typically costs."). It applies to every scenario and hints at no answer. The "before" trace is saved as `logs/step5_quiet_before_prompt_fix.json`. NOT fixed by this rule: the misleading "by year-end" claim and the model doing some arithmetic in its head; watch for both in later traces.
 
 Open questions: (anything I still need to ask my professor)
 
