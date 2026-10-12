@@ -32,7 +32,7 @@ Steps 5 and most of 7 are DONE; step 6 (baseline) and step 8 (README) are NOT. W
 
 DECISION MADE: "afford" means cash flow (decision 53). The final set of eight runs is done and read (decision 54). Code and prompt are FROZEN again.
 
-Next session starts here (DEADLINE Oct 12, 5 PM; suggested upload by 3 PM): (1) commit as listed above and fix my local `.env` (`MODEL_NAME=claude-sonnet-5-5`, check with `grep '^MODEL_NAME=' .env`); (2) DONE (decision 55): the ladder questions ran as runs 9 and 10 (TIGHT and NO); (3) DONE (decision 56): `baseline.py` written and run; (4) step 8, README (findings in decisions 44 to 54, the baseline comparison, the model choice, and that the allocation uses income only while the purchase answer uses cash flow); (5) real 401 and 404 tests (`ANTHROPIC_API_KEY=bad venv/bin/python3 agent.py quiet "hi"` and `MODEL_NAME=nope venv/bin/python3 agent.py quiet "hi"`; a bad key and a bad model name cost nothing); (6) practise the 5-minute demo twice (the strongest live demo is the `over_budget` allocation). The FEATURE FREEZE (decision 49) stays.
+Next session starts here (DEADLINE Oct 12, 5 PM; suggested upload by 3 PM): (1) commit as listed above and fix my local `.env` (`MODEL_NAME=claude-sonnet-5-5`, check with `grep '^MODEL_NAME=' .env`); (2) DONE (decision 55): the ladder questions ran as runs 9 and 10 (TIGHT and NO); (3) DONE (decision 56): `baseline.py` written and run; (4) DONE (README written; read it, edit it, check each claim against the logs) (findings in decisions 44 to 54, the baseline comparison, the model choice, and that the allocation uses income only while the purchase answer uses cash flow); (5) real 401 and 404 tests (`ANTHROPIC_API_KEY=bad venv/bin/python3 agent.py quiet "hi"` and `MODEL_NAME=nope venv/bin/python3 agent.py quiet "hi"`; a bad key and a bad model name cost nothing); (6) practise the 5-minute demo twice (the strongest live demo is the `over_budget` allocation). The FEATURE FREEZE (decision 49) stays.
 
 ### Step 2 plan (built; numbers below match the generated data)
 
@@ -129,6 +129,7 @@ When I say I am finished for the day, update this file before we stop: move fini
 Keep this list current so a fresh session knows what each file is for. (Fill in as files are created.)
 
 - `CLAUDE.md`: project instructions and live status (this file).
+- `README.md`: the graded README (written Oct 12, 2026; first person, for the professor): what the agent does, the problem, synthetic data, how it works, how to run it, `.env` setup, model choice (Haiku then Sonnet 5.5, with the evidence), one trace from tool result to decision to check, the ten final runs, the baseline comparison, what I verified, what I caught, known limits, how I used AI, and the seven requirements checked honestly. Every path in it was checked to exist and its numbers were spot-checked against the logs; I must still read it and be able to explain every claim.
 - `.gitignore`: keeps `.env`, `venv/`, `__pycache__/`, `logs/scratch/` out of git.
 - `.env.example`: template with the two setting names and a FAKE key. Copy it to `.env` and fill in the real key there.
 - `prompts.py`: the system prompt (reply format, the 8 tool descriptions with when each is useful, the answer formats). `build_system_prompt(today)` fills in the date.
